@@ -18,6 +18,6 @@ snap <user.running_applications> <user.window_snap_position>:
 snap <user.running_applications> [screen] <number>:
     user.move_app_to_screen(running_applications, number)
 
-# focus VSCode 
+# focus VSCode
 coder:
     user.switcher_focus('code')
