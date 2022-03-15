@@ -3,10 +3,10 @@ from typing import Set
 from talon import Module, Context, actions, app
 import sys
 
-default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
+default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip area oeko uber".split(
     " "
 )
-letters_string = "abcdefghijklmnopqrstuvwxyz"
+letters_string = "abcdefghijklmnopqrstuvwxyzäöü"
 
 default_digits = "zero one two three four five six seven eight nine".split(" ")
 numbers = [str(i) for i in range(10)]
@@ -191,6 +191,7 @@ symbol_key_words = {
     "pipe": "|",
     "stack": ":",
     "drip": ",",
+    "dollar": "$",
 }
 
 # make punctuation words also included in {user.symbol_keys}
