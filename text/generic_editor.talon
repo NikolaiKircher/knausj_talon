@@ -16,10 +16,10 @@ tug | go left:
 push | go right:
     edit.right()
 
-north | go up:
+go up:
     edit.up()
 
-south | go down:
+go down:
     edit.down()
 
 go line start:
@@ -35,12 +35,6 @@ go way left:
 go way right:
     edit.line_end()
 
-go bottom:
-    edit.file_end()
-
-go top:
-    edit.file_start()
-    
 go bottom:
     edit.file_end()
     
