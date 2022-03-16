@@ -34,7 +34,7 @@ panel control: user.vscode("workbench.panel.repl.view.focus")
 panel output: user.vscode("workbench.panel.output.focus")
 panel problems: user.vscode("workbench.panel.markers.view.focus")
 panel switch: user.vscode("workbench.action.togglePanel")
-panel terminal | term: user.vscode("workbench.action.terminal.focus")
+panel (terminal | term): user.vscode("workbench.action.terminal.focus")
 panel editor: user.vscode("workbench.action.focusActiveEditorGroup")
 
 # Settings
