@@ -36,6 +36,7 @@ state begin: "begin"
 state rescue: "rescue "
 state module: "module "
 state where: "where"
+state raise: "raise "
 
 ^instance <user.text>$:
     insert("@")

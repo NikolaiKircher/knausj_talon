@@ -175,11 +175,11 @@ symbol_key_words = {
     "square close": "]",
     "brace": "{",
     "brace close": "}",
-    "leper": "(",
+    # "leper": "(",
     "repper": ")",
-    "lacker": "[",
+    # "lacker": "[",
     "racker": "]",
-    "lacer": "{",
+    # "lacer": "{",
     "racer": "}",
     "angle": "<",
     "wrangle": ">",
@@ -192,6 +192,7 @@ symbol_key_words = {
     "stack": ":",
     "drip": ",",
     "dollar": "$",
+    "atsy": "@",
 }
 
 # make punctuation words also included in {user.symbol_keys}
