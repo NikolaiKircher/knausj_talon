@@ -25,7 +25,7 @@ south | go down:
 go line start:
     edit.line_start()
 
-go line end:
+tail | go line end:
     edit.line_end()
 
 go way left:
