@@ -23,3 +23,6 @@ mode: all
 
 key(ctrl-f8):
     speech.toggle()
+
+key(ctrl-f9):
+    user.mouse_toggle_control_mouse()
