@@ -4,22 +4,22 @@ find it:
 next one:
     edit.find_next()
 
-go word left:
+drain | go word left:
     edit.word_left()
 
-go word right:
+step | go word right:
     edit.word_right()
 
-go left:
+tug | go left:
     edit.left()
 
-go right:
+push | go right:
     edit.right()
 
-go up:
+north | go up:
     edit.up()
 
-go down:
+south | go down:
     edit.down()
 
 go line start:
@@ -35,10 +35,10 @@ go way left:
 go way right:
     edit.line_end()
 
-go way down:
+go bottom:
     edit.file_end()
 
-go way up:
+go top:
     edit.file_start()
     
 go bottom:
