@@ -10,7 +10,17 @@ tag(): user.tabs
 
 # custom
 tab only: user.vscode("workbench.action.closeOtherEditors")
-split open: user.vscode("git.openFile")
+# split open: user.vscode("git.openFile")
+
+git discard: key(ctrl-g d),
+git blame: user.vscode("gitlens.toggleFileBlameInDiffLeft")
+git open head: user.vscode("gitlens.openWorkingFile")
+git compare:
+    key(ctrl-shift-g)
+    key(,)
+git compare next:
+    key(ctrl-shift-g)
+    key(.)
 
 # knausj
 window reload: user.vscode("workbench.action.reloadWindow")
@@ -20,7 +30,7 @@ window close: user.vscode("workbench.action.closeWindow")
 please [<user.text>]:
     user.vscode("workbench.action.showCommands")
     insert(user.text or "")
-    
+
 # Sidebar
 bar explore: user.vscode("workbench.view.explorer")
 bar extensions: user.vscode("workbench.view.extensions")
@@ -34,7 +44,7 @@ symbol hunt [<user.text>]:
     user.vscode("workbench.action.gotoSymbol")
     sleep(50ms)
     insert(text or "")
-    
+
 # Panels
 panel control: user.vscode("workbench.panel.repl.view.focus")
 panel output: user.vscode("workbench.panel.output.focus")
@@ -106,7 +116,7 @@ go recent [<user.text>]:
     sleep(50ms)
     insert(text or "")
     sleep(250ms)
-    
+
 # Bookmarks. Requires Bookmarks plugin
 go marks: user.vscode("workbench.view.extension.bookmarks")
 toggle mark: user.vscode("bookmarks.toggle")
@@ -156,8 +166,6 @@ pull request: user.vscode("pr.create")
 change next: key(alt-f5)
 change last: key(shift-alt-f5)
 
-git discard: key(ctrl-g d)
-
 #Debugging
 break point: user.vscode("editor.debug.action.toggleBreakpoint")
 step over: user.vscode("workbench.action.debug.stepOver")
@@ -198,7 +206,7 @@ restore: user.vscode("workbench.action.evenEditorWidths")
 replace here:
     user.replace("")
     key(cmd-alt-l)
-    
+
 hover show: user.vscode("editor.action.showHover")
 
 join lines: user.vscode("editor.action.joinLines")
