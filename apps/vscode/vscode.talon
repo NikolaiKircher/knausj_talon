@@ -12,9 +12,11 @@ tag(): user.tabs
 tab only: user.vscode("workbench.action.closeOtherEditors")
 # split open: user.vscode("git.openFile")
 
-git discard: key(ctrl-g d),
+git discard file: key(ctrl-g d)
+change discard: key(ctrl-k ctrl-r)
 git blame: user.vscode("gitlens.toggleFileBlameInDiffLeft")
 git open head: user.vscode("gitlens.openWorkingFile")
+# maybe use git diff instead?
 git compare:
     key(ctrl-shift-g)
     key(,)
