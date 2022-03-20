@@ -15,7 +15,7 @@ tab only: user.vscode("workbench.action.closeOtherEditors")
 git discard file: key(ctrl-g d)
 change discard: key(ctrl-k ctrl-r)
 git blame: user.vscode("gitlens.toggleFileBlameInDiffLeft")
-git open head: user.vscode("gitlens.openWorkingFile")
+git head: user.vscode("gitlens.openWorkingFile")
 # maybe use git diff instead?
 git compare:
     key(ctrl-shift-g)
