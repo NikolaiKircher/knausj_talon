@@ -223,8 +223,10 @@ alternate_keys = {
     "clap": "enter",
     "scrape": "escape",
     "delete": "backspace",
-    "forward delete": "delete",
-    #'junk': 'backspace',
+    "junk": "backspace",
+    "trash": "delete",
+    "tail": "end",
+    "tax": "tab",
     "page up": "pageup",
     "page down": "pagedown",
 }
