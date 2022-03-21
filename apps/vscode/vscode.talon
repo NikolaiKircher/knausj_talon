@@ -24,6 +24,12 @@ git compare next:
     key(ctrl-shift-g)
     key(.)
 
+term test:
+    user.vscode("workbench.action.terminal.focus")
+    sleep(50ms)
+    key(up enter)
+    user.vscode("workbench.action.toggleMaximizedPanel")
+
 # knausj
 window reload: user.vscode("workbench.action.reloadWindow")
 window close: user.vscode("workbench.action.closeWindow")
