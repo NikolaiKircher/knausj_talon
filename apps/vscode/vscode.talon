@@ -30,6 +30,9 @@ term test:
     key(up enter)
     user.vscode("workbench.action.toggleMaximizedPanel")
 
+term selected:
+    user.vscode("workbench.action.terminal.runSelectedText")
+
 # knausj
 window reload: user.vscode("workbench.action.reloadWindow")
 window close: user.vscode("workbench.action.closeWindow")
