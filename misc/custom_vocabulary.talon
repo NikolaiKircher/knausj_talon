@@ -1,2 +1,2 @@
-make {user.custom_word}:
-    insert(user.custom_word)
+make {user.custom_vocabulary}:
+    insert(user.custom_vocabulary)

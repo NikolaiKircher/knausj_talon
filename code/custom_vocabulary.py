@@ -10,6 +10,7 @@ ctx.lists["user.custom_vocabulary"] = [
     'rubocup',
     'ruby',
     'sharepoint',
+    'solargraph',
     'vscode',
     'where',
 ]
