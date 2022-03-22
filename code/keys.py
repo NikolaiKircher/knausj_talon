@@ -229,6 +229,7 @@ alternate_keys = {
     "tax": "tab",
     "page up": "pageup",
     "page down": "pagedown",
+    "blank": "space",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
