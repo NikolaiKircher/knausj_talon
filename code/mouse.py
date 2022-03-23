@@ -61,6 +61,12 @@ setting_mouse_enable_pop_click = mod.setting(
     default=0,
     desc="Enable pop to click when control mouse is enabled.",
 )
+setting_pop_repeat = mod.setting(
+    "pop_repeat",
+    type=int,
+    default=0,
+    desc="Pop repeats last command",
+)
 setting_mouse_enable_pop_stops_scroll = mod.setting(
     "mouse_enable_pop_stops_scroll",
     type=int,
@@ -293,7 +299,10 @@ def on_pop(active):
         and eye_mouse.mouse.attached_tracker is not None
     ):
         if setting_mouse_enable_pop_click.get() >= 1:
-            ctrl.mouse_click(button=0, hold=16000)
+            if setting_pop_repeat.get() >= 1:
+                actions.core.repeat_command(1)
+            else:
+                ctrl.mouse_click(button=0, hold=16000)
 
 
 noise.register("pop", on_pop)
