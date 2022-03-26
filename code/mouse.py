@@ -187,6 +187,18 @@ class Actions:
         if button_down:
             ctrl.mouse_click(button=0, up=True)
 
+    def mouse_scroll_down_limited(amount: float = 1):
+        """Scrolls down with amount regulated for hiss"""
+        # print(f'amount {amount}')
+        result = 100 + amount * 3
+        # print(result)
+        mouse_scroll(max(result, 500))()
+
+    def mouse_scroll_up_limited(amount: float = 1):
+        """Scrolls up with amount regulated for hiss"""
+        result = 100 + amount * 3
+        mouse_scroll(max(result, 500) * -1)()
+
     def mouse_scroll_down(amount: float = 1):
         """Scrolls down"""
         mouse_scroll(amount * setting_mouse_wheel_down_amount.get())()
