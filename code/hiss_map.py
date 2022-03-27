@@ -237,6 +237,10 @@ class Actions:
         """Activates or deactivates movement"""
         _arrows_scroller.start_stop()
 
+    def move_direction_stop():
+        """Activates or deactivates movement"""
+        _arrows_scroller.stop()
+
     def move_direction():
         """tiny step in direction of gaze"""
         _arrows_scroller.step_in_direction()
