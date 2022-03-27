@@ -2,13 +2,13 @@
 # toggle pop: user.pop_repeat_toggle()
 
 pop repeat: user.pop_repeat_activate()
-clicky | pop click: user.pop_repeat_deactivate()
+pop click: user.pop_repeat_deactivate()
 
 popper:
     core.repeat_command(1)
     user.pop_repeat_activate()
 
-touchy:
+clicky:
     mouse_click(0)
     user.pop_repeat_deactivate()
 
