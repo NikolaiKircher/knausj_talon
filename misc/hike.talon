@@ -14,3 +14,6 @@ jump:
 # step: user.move_direction()
 
 tiny: user.move_direction(0.3)
+
+slow: user.slow_down()
+speed: user.speed_up()
