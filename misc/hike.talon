@@ -12,3 +12,5 @@ jump:
 
 # implemented in python file
 # step: user.move_direction()
+
+tiny: user.move_direction(0.3)

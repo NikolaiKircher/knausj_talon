@@ -125,10 +125,10 @@ class EyeScroller(object):
         else:
             self.start()
 
-    def step_in_direction(self):
+    def step_in_direction(self, length):
         """step in direction"""
         self.start()
-        time.sleep(0.5)
+        time.sleep(length)
         self.stop()
 
 
@@ -241,9 +241,9 @@ class Actions:
         """Activates or deactivates movement"""
         _arrows_scroller.stop()
 
-    def move_direction():
+    def move_direction(length: int = 0.5):
         """tiny step in direction of gaze"""
-        _arrows_scroller.step_in_direction()
+        _arrows_scroller.step_in_direction(length)
 
 # @arrows_context.action_class("self")
 # class ArrowsActions:
