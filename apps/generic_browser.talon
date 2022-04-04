@@ -1,5 +1,9 @@
 tag: browser
 -
+# requires vimium with this mapping:
+# map <c-x> closeOtherTabs
+tab only: key(ctrl-x)
+
 address bar | go address | go url: browser.focus_address()
 address copy | url copy | copy address | copy url:
     browser.focus_address()
