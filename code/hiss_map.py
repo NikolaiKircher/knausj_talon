@@ -84,7 +84,6 @@ class KeyMover:
                         actions.key(f"{key}:down")
                         self._pressed_keys.add(key)
                 elif key in self._pressed_keys:
-                    print(f"{key}:up")
                     actions.key(f"{key}:up")
                     self._pressed_keys.remove(key)
 
@@ -105,6 +104,8 @@ class EyeScroller(object):
         """
         self._job = None
         self._move_function = move_function
+        self.round = 0
+        self.speed = 1
 
     def start(self):
         self._update_scroll()
@@ -125,10 +126,16 @@ class EyeScroller(object):
         else:
             self.start()
 
-    def step_in_direction(self):
+    def speed_up(self):
+        self.speed = 1
+
+    def slow_down(self):
+        self.speed = 0.5
+
+    def step_in_direction(self, length):
         """step in direction"""
         self.start()
-        time.sleep(0.5)
+        time.sleep(length)
         self.stop()
 
 
@@ -169,6 +176,14 @@ class EyeScroller(object):
         return [angle_from_north(center, point) for point in zone_limits]
 
     def _update_scroll(self):
+        if self.speed < 1:
+            if self.round > 0:
+                self._move_function(False, False, False, False)
+                self.round = 0
+                return
+            else:
+                self.round += 1
+
         if len(eye_mouse.mouse.eye_hist) < 2:
             return
         left_eye, right_eye = eye_mouse.mouse.eye_hist[-1]
@@ -241,9 +256,17 @@ class Actions:
         """Activates or deactivates movement"""
         _arrows_scroller.stop()
 
-    def move_direction():
+    def move_direction(length: int = 0.5):
         """tiny step in direction of gaze"""
-        _arrows_scroller.step_in_direction()
+        _arrows_scroller.step_in_direction(length)
+
+    def slow_down():
+        """decrease speed"""
+        _arrows_scroller.slow_down()
+
+    def speed_up():
+        """increase speed"""
+        _arrows_scroller.speed_up()
 
 # @arrows_context.action_class("self")
 # class ArrowsActions:
