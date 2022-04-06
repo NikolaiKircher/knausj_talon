@@ -11,6 +11,10 @@ tag(): user.tabs
 # custom
 tab only: user.vscode("workbench.action.closeOtherEditors")
 # split open: user.vscode("git.openFile")
+hash box:
+  insert('[""]')
+  key(left)
+  key(left)
 
 git discard file: key(ctrl-g d)
 change discard: key(ctrl-k ctrl-r)
