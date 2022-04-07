@@ -16,6 +16,12 @@ hash box:
   key(left)
   key(left)
 
+rspec file: user.vscode("extension.runFileOnRspec")
+rspec line: user.vscode("extension.runLineOnRspec")
+rspec repeat: user.vscode("extension.runOnLastSpec")
+
+task repeat: user.vscode("workbench.action.tasks.reRunTask")
+
 git discard file: key(ctrl-g d)
 change discard: key(ctrl-k ctrl-r)
 git blame: user.vscode("gitlens.toggleFileBlameInDiffLeft")
