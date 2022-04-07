@@ -17,6 +17,27 @@ message done: key(ctrl-shift-1)
 message unread: key(ctrl-u)
 message read: key(ctrl-q)
 
+new messages:
+  mouse_move(59, 237)
+  mouse_click()
+
+first message:
+  mouse_move(490, 267)
+  mouse_click()
+
+copy login:
+  mimic("first message")
+  mouse_move(893, 367)
+  mouse_click()
+  mouse_click()
+  edit.copy()
+  key(delete)
+  key(super-4)
+  sleep(100ms)
+  key(tab)
+  edit.paste()
+
+
 # documentation
 # https://support.microsoft.com/en-us/office/keyboard-shortcuts-for-outlook-3cdeb221-7ae5-4c1d-8c1d-9e63216c1efd
 
