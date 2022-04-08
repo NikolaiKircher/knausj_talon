@@ -30,11 +30,15 @@ copy login:
   mouse_move(893, 367)
   mouse_click()
   mouse_click()
-  edit.copy()
-  key(delete)
-  key(super-4)
   sleep(100ms)
+  edit.copy()
+  # sleep(100ms)
+  # key(delete)
+  sleep(100ms)
+  key(super-4)
+  sleep(800ms)
   key(tab)
+  sleep(100ms)
   edit.paste()
 
 
