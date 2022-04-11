@@ -22,6 +22,9 @@ rspec repeat: user.vscode("extension.runOnLastSpec")
 
 task repeat: user.vscode("workbench.action.tasks.reRunTask")
 
+comment to do:
+  insert("# TODO: ")
+
 git discard file: key(ctrl-g d)
 change discard: key(ctrl-k ctrl-r)
 git blame: user.vscode("gitlens.toggleFileBlameInDiffLeft")
