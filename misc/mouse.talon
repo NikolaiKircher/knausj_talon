@@ -20,6 +20,11 @@ midclick:
 	# close the mouse grid
 	user.grid_close()
 
+contouch:
+  key(ctrl:down)
+  mouse_click(0)
+  key(ctrl:up)
+
 #see keys.py for modifiers.
 #defaults
 #command
