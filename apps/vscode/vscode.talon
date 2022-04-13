@@ -16,9 +16,14 @@ hash box:
   key(left)
   key(left)
 
-rspec file: user.vscode("extension.runFileOnRspec")
 rspec line: user.vscode("extension.runLineOnRspec")
+rspec file: user.vscode("extension.runFileOnRspec")
 rspec repeat: user.vscode("extension.runOnLastSpec")
+
+rubocop file: user.vscode_with_plugin("workbench.action.tasks.runTask", "rubocop file")
+rubocop project: user.vscode_with_plugin("workbench.action.tasks.runTask", "rubocop project")
+
+cucumber file: user.vscode_with_plugin("workbench.action.tasks.runTask", "cucumber file")
 
 task repeat: user.vscode("workbench.action.tasks.reRunTask")
 
