@@ -13,4 +13,6 @@ ctx.lists["user.custom_vocabulary"] = [
     'solargraph',
     'vscode',
     'where',
+    'rails',
+    'rails routes',
 ]
