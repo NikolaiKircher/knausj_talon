@@ -52,6 +52,11 @@ term test:
     key(up enter)
     user.vscode("workbench.action.toggleMaximizedPanel")
 
+prepare release:
+    user.vscode("workbench.action.terminal.focus")
+    sleep(500ms)
+    insert('bash bin/build_and_deploy_on_gitlab.sh ')
+
 term selected:
     user.vscode("workbench.action.terminal.runSelectedText")
 
