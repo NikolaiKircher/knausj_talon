@@ -9,6 +9,10 @@ tag(): user.splits
 tag(): user.tabs
 
 # custom
+park:
+    mouse_move(1863, 187)
+    user.mouse_toggle_control_mouse()
+
 tab only: user.vscode("workbench.action.closeOtherEditors")
 # split open: user.vscode("git.openFile")
 hash box:
