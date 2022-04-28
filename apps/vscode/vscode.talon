@@ -56,6 +56,11 @@ term test:
     key(up enter)
     user.vscode("workbench.action.toggleMaximizedPanel")
 
+term cop:
+    user.vscode("workbench.action.terminal.focus")
+    sleep(50ms)
+    insert('bundle exec rubocop')
+
 prepare release:
     user.vscode("workbench.action.terminal.focus")
     sleep(500ms)

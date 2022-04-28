@@ -15,4 +15,5 @@ ctx.lists["user.custom_vocabulary"] = [
     'where',
     'rails',
     'rails routes',
+    'restart',
 ]
