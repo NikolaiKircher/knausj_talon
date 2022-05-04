@@ -4,6 +4,12 @@ tag: browser
 # map <c-x> closeOtherTabs
 tab only: key(ctrl-x)
 
+jira copy number:
+    browser.focus_address()
+    sleep(50ms)
+    key(right ctrl-shift-left ctrl-shift-left)
+    edit.copy()
+
 address bar | go address | go url: browser.focus_address()
 address copy | url copy | copy address | copy url:
     browser.focus_address()
