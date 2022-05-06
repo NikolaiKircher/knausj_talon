@@ -41,6 +41,7 @@ comment to do:
 git discard file: key(ctrl-g d)
 change discard: key(ctrl-k ctrl-r)
 git blame: user.vscode("gitlens.toggleFileBlameInDiffLeft")
+git blame toggle: user.vscode("gitlens.toggleLineBlame")
 git head: user.vscode("gitlens.openWorkingFile")
 # maybe use git diff instead?
 git compare:
