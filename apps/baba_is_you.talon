@@ -1,5 +1,7 @@
-mode: user.single_application
 title: Baba Is You
+and mode: user.single_application
+and not mode: sleep
+
 -
 tag(): user.pop_repeat_on
 
