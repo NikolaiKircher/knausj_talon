@@ -10,6 +10,9 @@ jira copy number:
     key(right ctrl-shift-left ctrl-shift-left)
     edit.copy()
 
+jira code:
+    insert('{{code}}')
+
 address bar | go address | go url: browser.focus_address()
 address copy | url copy | copy address | copy url:
     browser.focus_address()
