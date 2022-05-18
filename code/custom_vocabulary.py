@@ -7,13 +7,10 @@ ctx = Context()
 ctx.lists["user.custom_vocabulary"] = [
     'raise',
     'rescue',
-    'rubocop',
     'ruby',
-    'sharepoint',
-    'solargraph',
-    'vscode',
+    # 'vscode',
     'where',
-    'rails',
+    # 'rails',
     'rails routes',
     'restart',
 ]

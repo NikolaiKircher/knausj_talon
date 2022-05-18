@@ -13,6 +13,12 @@ jira copy number:
 jira code:
     insert('{{code}}')
 
+jira minus:
+    insert('(-)')
+
+jira plus:
+    insert('(+)')
+
 address bar | go address | go url: browser.focus_address()
 address copy | url copy | copy address | copy url:
     browser.focus_address()
