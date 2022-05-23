@@ -39,7 +39,10 @@ comment to do:
   insert("# TODO: ")
 
 git discard file: key(ctrl-g d)
+
+# revert selected ranges
 change discard: key(ctrl-k ctrl-r)
+
 git blame: user.vscode("gitlens.toggleFileBlameInDiffLeft")
 git blame toggle: user.vscode("gitlens.toggleLineBlame")
 git head: user.vscode("gitlens.openWorkingFile")
@@ -60,7 +63,12 @@ term test:
 term cop:
     user.vscode("workbench.action.terminal.focus")
     sleep(50ms)
-    insert('bundle exec rubocop -a --force-default-config ')
+    insert('rubocop -a --force-default-config ')
+
+git reset soft:
+    user.vscode("workbench.action.terminal.focus")
+    sleep(50ms)
+    insert('git rs')
 
 prepare release:
     user.vscode("workbench.action.terminal.focus")
@@ -213,6 +221,7 @@ git rebase abort: user.vscode("git.rebaseAbort")
 git reveal: user.vscode("git.revealInExplorer")
 git revert: user.vscode("git.revertChange")
 git stash: user.vscode("git.stash")
+git stash untracked: user.vscode("git.stashIncludeUntracked")
 git stash pop: user.vscode("git.stashPop")
 git status: user.vscode("workbench.scm.focus")
 git stage: user.vscode("git.stage")
