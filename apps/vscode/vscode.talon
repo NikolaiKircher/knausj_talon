@@ -60,7 +60,7 @@ term test:
 term cop:
     user.vscode("workbench.action.terminal.focus")
     sleep(50ms)
-    insert('bundle exec rubocop')
+    insert('bundle exec rubocop -a --force-default-config ')
 
 prepare release:
     user.vscode("workbench.action.terminal.focus")
