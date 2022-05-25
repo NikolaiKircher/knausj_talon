@@ -13,6 +13,8 @@ park:
     mouse_move(1863, 187)
     user.mouse_toggle_control_mouse()
 
+file save as: user.vscode("workbench.action.files.saveAs")
+
 tab only: user.vscode("workbench.action.closeOtherEditors")
 # split open: user.vscode("git.openFile")
 hash box:
