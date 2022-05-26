@@ -12,10 +12,7 @@ os: windows
 # copied from andreas arvidsson
 def focus_window(window: ui.Window):
     """Focus window and wait until finished"""
-    print('focusing window')
-    print(window)
     window.focus()
-
     t1 = time.monotonic()
     while ui.active_window() != window:
         if time.monotonic() - t1 > 1:
@@ -24,15 +21,9 @@ def focus_window(window: ui.Window):
 
 def cycle_windows(app: ui.App, diff: int):
     active = ui.active_window()
-    print(active)
     windows = list(
         filter(lambda w: w == active or (not w.hidden and w.title != "" and w.title != "Chrome Legacy Window"), app.windows())
     )
-    titles = list(
-        map(lambda w: w.hidden, windows)
-    )
-    print(titles)
-
     current = windows.index(active)
     max = len(windows) - 1
     i = actions.user.cycle(current + diff, 0, max)
