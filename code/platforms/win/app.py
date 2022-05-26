@@ -9,10 +9,11 @@ ctx.matches = r"""
 os: windows
 """
 
-# WIP
 # copied from andreas arvidsson
 def focus_window(window: ui.Window):
     """Focus window and wait until finished"""
+    print('focusing window')
+    print(window)
     window.focus()
 
     t1 = time.monotonic()
@@ -21,15 +22,26 @@ def focus_window(window: ui.Window):
             raise RuntimeError(f"Can't focus window: {window.title}")
         actions.sleep("50ms")
 
-def cycle_windows(current_app: ui.App, diff: int):
+def cycle_windows(app: ui.App, diff: int):
     active = ui.active_window()
+    print(active)
     windows = list(
-        filter(lambda w: w == active or (not w.hidden and w.title != "" and w.title != "Chrome Legacy Window"), current_app.windows())
+        filter(lambda w: w == active or (not w.hidden and w.title != "" and w.title != "Chrome Legacy Window"), app.windows())
     )
+    titles = list(
+        map(lambda w: w.hidden, windows)
+    )
+    print(titles)
+
+    current = windows.index(active)
     max = len(windows) - 1
-    print(max)
-    focus_window(windows[max])
-    # TODO: try windows[0] for window_last
+    i = actions.user.cycle(current + diff, 0, max)
+    while i != current:
+        try:
+            focus_window(windows[i])
+            break
+        except:
+            i = actions.user.cycle(i + diff, 0, max)
 
 @ctx.action_class('app')
 class AppActions:
@@ -55,9 +67,9 @@ class AppActions:
         actions.key('win-d alt-tab')
         #requires easy window switcher or equivalent (built into most Linux)
     def window_next():
-        cycle_windows(ui.active_app(), 1)
+        cycle_windows(ui.active_app(), -1)
     def window_open():
         actions.key('ctrl-n')
         #requires easy window switcher or equivalent (built into most Linux)
     def window_previous():
-        cycle_windows(ui.active_app(), -1)
+        cycle_windows(ui.active_app(), 1)
