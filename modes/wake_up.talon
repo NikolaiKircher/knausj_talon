@@ -20,6 +20,7 @@ mode: all
 ^talon sleep [<phrase>]$: speech.disable()
 ^drowse [<phrase>]$: speech.disable()
 ^hallo zusammen [<phrase>]$: speech.disable()
+^guten tag [<phrase>]$: speech.disable()
 ^guten morgen [<phrase>]$: speech.disable()
 
 ^snore$:
