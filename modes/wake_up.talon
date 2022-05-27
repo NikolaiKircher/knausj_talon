@@ -18,8 +18,9 @@ mode: all
     user.engine_sleep()
 
 ^talon sleep [<phrase>]$: speech.disable()
-
 ^drowse [<phrase>]$: speech.disable()
+^hallo zusammen [<phrase>]$: speech.disable()
+^guten morgen [<phrase>]$: speech.disable()
 
 ^snore$:
     user.mouse_sleep()
