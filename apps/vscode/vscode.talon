@@ -22,6 +22,8 @@ hash box:
   key(left)
   key(left)
 
+cross: user.split_next()
+
 rspec line: user.vscode("extension.runLineOnRspec")
 rspec file: user.vscode("extension.runFileOnRspec")
 rspec repeat: user.vscode("extension.runOnLastSpec")
