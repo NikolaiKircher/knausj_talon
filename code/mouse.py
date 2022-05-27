@@ -126,11 +126,12 @@ class Actions:
         show_cursor_helper(False)
 
     def mouse_wake():
-        """Enable control mouse, zoom mouse, and disables cursor"""
-        eye_zoom_mouse.toggle_zoom_mouse(True)
+        """Enable control mouse"""
+        toggle_control(True)
+        # eye_zoom_mouse.toggle_zoom_mouse(True)
         # eye_mouse.control_mouse.enable()
-        if setting_mouse_wake_hides_cursor.get() >= 1:
-            show_cursor_helper(False)
+        # if setting_mouse_wake_hides_cursor.get() >= 1:
+        #     show_cursor_helper(False)
 
     def mouse_calibrate():
         """Start calibration"""

@@ -2,10 +2,12 @@
 mode: all
 -
 ^welcome back$:
-    # user.mouse_wake()
-    # user.history_enable()
-    user.mouse_toggle_control_mouse()
-    user.talon_mode()
+    user.mouse_wake()
+    speech.enable()
+
+^talon wake$:
+    speech.enable()
+
 ^sleep all [<phrase>]$:
     user.switcher_hide_running()
     user.history_disable()
@@ -14,8 +16,10 @@ mode: all
     user.mouse_sleep()
     speech.disable()
     user.engine_sleep()
+
 ^talon sleep [<phrase>]$: speech.disable()
-^talon wake$: speech.enable()
+
+^drowse [<phrase>]$: speech.disable()
 
 ^snore$:
     user.mouse_sleep()
