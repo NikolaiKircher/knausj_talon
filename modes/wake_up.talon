@@ -1,11 +1,15 @@
 #defines the commands that sleep/wake Talon
 mode: all
 -
+^talon wake$:
+    speech.enable()
+
 ^welcome back$:
     user.mouse_wake()
     speech.enable()
 
-^talon wake$:
+parrot(palate_click):
+    user.mouse_wake()
     speech.enable()
 
 ^sleep all [<phrase>]$:
