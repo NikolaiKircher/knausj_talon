@@ -21,13 +21,13 @@ parrot(palate_click):
     speech.disable()
     user.engine_sleep()
 
-^talon sleep [<phrase>]$: speech.disable()
-^drowse [<phrase>]$: speech.disable()
-^hallo zusammen [<phrase>]$: speech.disable()
+talon sleep [<phrase>]$: speech.disable()
+drowse [<phrase>]$: speech.disable()
+^hallo zusammen$: speech.disable()
 ^guten tag [<phrase>]$: speech.disable()
 ^guten morgen [<phrase>]$: speech.disable()
 
-^snore$:
+snore [<phrase>]$:
     user.mouse_sleep()
     speech.disable()
 
