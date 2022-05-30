@@ -5,8 +5,9 @@ and not mode: sleep
 
 {user.board_position_x} {user.board_position_y}: user.board_click(user.board_position_x, user.board_position_y)
 
-clap: key(enter)
-# scrape: key(escape)
+confirm | exit:
+  mouse_move(1282, 1003)
+  mouse_click()
 
 control mouse: user.mouse_toggle_control_mouse()
 

@@ -40,3 +40,4 @@ class GameActions:
     position_y = starting_position_y + (4 - int(y)) * grid_width
     actions.mouse_move(position_x, position_y)
     actions.mouse_click()
+    actions.sleep("200ms")
