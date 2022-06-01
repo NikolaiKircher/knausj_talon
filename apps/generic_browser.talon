@@ -4,19 +4,19 @@ tag: browser
 # map <c-x> closeOtherTabs
 tab only: key(ctrl-x)
 
-jira copy number:
+ticket copy | copy number:
     browser.focus_address()
     sleep(50ms)
     key(right ctrl-shift-left ctrl-shift-left)
     edit.copy()
 
-jira code:
+snip code:
     insert('{{code}}')
 
-jira minus:
+snip minus:
     insert('(-)')
 
-jira plus:
+snip plus:
     insert('(+)')
 
 address bar | go address | go url: browser.focus_address()
