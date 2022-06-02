@@ -10,7 +10,7 @@ drain | go word left:
 step | go word right:
     edit.word_right()
 
-tug | go left:
+tuck | go left:
     edit.left()
 
 push | go right:
