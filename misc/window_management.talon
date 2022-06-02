@@ -19,5 +19,9 @@ snap <user.running_applications> [screen] <number>:
     user.move_app_to_screen(running_applications, number)
 
 # focus VSCode
-# coder:
-    # user.switcher_focus('code')
+cody:
+    user.switcher_focus('code')
+
+# focus browser
+portal:
+    user.switcher_focus('google')
