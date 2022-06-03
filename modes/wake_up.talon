@@ -8,9 +8,10 @@ mode: all
     user.mouse_wake()
     speech.enable()
 
-parrot(palate_click):
-    user.mouse_wake()
-    speech.enable()
+# parrot(palate_click):
+#     print('palate_click')
+#     user.mouse_wake()
+#     speech.enable()
 
 ^sleep all [<phrase>]$:
     user.switcher_hide_running()
