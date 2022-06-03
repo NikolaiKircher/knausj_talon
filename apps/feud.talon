@@ -9,6 +9,8 @@ confirm | exit:
   mouse_move(1282, 1003)
   mouse_click()
 
+scrape: key(escape)
+
 control mouse: user.mouse_toggle_control_mouse()
 
 settings():
