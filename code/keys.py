@@ -173,7 +173,7 @@ symbol_key_words = {
     # "lacer": "{",
     "racer": "}",
     "angle": "<",
-    "wrangle": ">",
+    "right angle": ">",
     "star": "*",
     "pound": "#",
     "percent": "%",
