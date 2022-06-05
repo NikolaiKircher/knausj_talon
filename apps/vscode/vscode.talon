@@ -9,9 +9,6 @@ tag(): user.splits
 tag(): user.tabs
 
 # custom
-park:
-    mouse_move(1863, 187)
-    user.mouse_toggle_control_mouse()
 
 # expand search options in sidebar
 search extension:
