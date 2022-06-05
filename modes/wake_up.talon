@@ -23,7 +23,6 @@ mode: all
     user.engine_sleep()
 
 talon sleep [<phrase>]$: speech.disable()
-drowse [<phrase>]$: speech.disable()
 
 snore [<phrase>]$:
     user.mouse_sleep()
