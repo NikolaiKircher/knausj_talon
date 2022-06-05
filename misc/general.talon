@@ -3,9 +3,6 @@ nope: key(ctrl-z)
 sup: user.mouse_scroll_up()
 clown: user.mouse_scroll_down()
 
-# select all / select line
-seagull: key(home shift-end)
-
 # switch
 swat: key(alt-tab)
 

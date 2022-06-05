@@ -16,7 +16,7 @@ drill | go left:
 push | go right:
     edit.right()
 
-go up:
+go north:
     edit.up()
 
 go down:
@@ -48,7 +48,7 @@ go page up:
     edit.page_up()
 
 # selecting
-select line:
+select line | seagull:
     edit.select_line()
 
 select all:
@@ -115,11 +115,11 @@ clear down:
 clear word:
     edit.delete_word()
 
-clear word left:
+clear word left | ash:
     edit.extend_word_left()
     edit.delete()
 
-clear word right:
+clear word right | fire:
     edit.extend_word_right()
     edit.delete()
 
