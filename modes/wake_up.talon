@@ -25,11 +25,6 @@ mode: all
 talon sleep [<phrase>]$: speech.disable()
 drowse [<phrase>]$: speech.disable()
 
-meeting join:
-    mouse_click(0)
-    user.mouse_sleep()
-    speech.disable()
-
 snore [<phrase>]$:
     user.mouse_sleep()
     speech.disable()
