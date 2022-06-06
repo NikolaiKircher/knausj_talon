@@ -301,10 +301,9 @@ def on_pop(active: bool):
     # Talon is awake
     if actions.speech.enabled():
         if eye_mouse.mouse.attached_tracker is not None:
-            if setting_pop_repeat.get() >= 1:
-                actions.core.repeat_command(1)
-            else:
-                ctrl.mouse_click(button=0, hold=16000)
+            ctrl.mouse_click(button=0, hold=16000)
+        else:
+            actions.core.repeat_command(1)
     # In sleep mode
     else:
         if eye_mouse.mouse.attached_tracker is not None:
