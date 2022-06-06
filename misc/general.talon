@@ -10,6 +10,8 @@ park:
   mouse_move(1863, 187)
   user.mouse_sleep()
 
+sleep [<number_small>] [seconds]: user.macro_insert_wait(number_small or 0)
+
 meeting join:
   mouse_click(0)
   user.mouse_sleep()
