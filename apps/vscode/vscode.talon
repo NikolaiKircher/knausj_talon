@@ -9,6 +9,13 @@ tag(): user.splits
 tag(): user.tabs
 
 # custom
+search result:
+    key("tab:6 down")
+
+copy paste:
+    edit.copy()
+    sleep(50ms)
+    edit.paste()
 
 # expand search options in sidebar
 search extension:
