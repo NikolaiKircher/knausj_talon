@@ -305,7 +305,7 @@ def on_pop(active: bool):
                 actions.core.repeat_command(1)
             else:
                 ctrl.mouse_click(button=0, hold=16000)
-&:
+        else:
             actions.core.repeat_command(1)
     # In sleep mode
     else:
