@@ -30,6 +30,12 @@ shifter:
   mouse_click(0)
   key(shift:up)
 
+fish:
+  key(shift:down)
+  mouse_click(0)
+  key(shift:up)
+	edit.copy()
+
 #see keys.py for modifiers.
 #defaults
 #command
