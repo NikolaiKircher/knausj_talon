@@ -3,12 +3,7 @@ zoom mouse: user.mouse_toggle_zoom_mouse()
 camera overlay: user.mouse_toggle_camera_overlay()
 run calibration: user.mouse_calibrate()
 touch:
-	mouse_click(0)
-	# close the mouse grid if open
-	user.grid_close()
-    	# End any open drags
-	# Touch automatically ends left drags so this is for right drags specifically
-	user.mouse_drag_end()
+	user.mouse_click_left()
 
 king:
 	mouse_click(1)

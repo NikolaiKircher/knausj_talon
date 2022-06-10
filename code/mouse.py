@@ -163,6 +163,15 @@ class Actions:
         # Start drag
         ctrl.mouse_click(button=button, down=True)
 
+    def mouse_click_left():
+        """Releases held down mouse buttons or click left"""
+        buttons_held_down = list(ctrl.mouse_buttons_down())
+        if buttons_held_down:
+            for button in buttons_held_down:
+                ctrl.mouse_click(button=button, up=True)
+        else:
+            ctrl.mouse_click(0)
+
     def mouse_drag_end():
         """Releases any held mouse buttons"""
         buttons_held_down = list(ctrl.mouse_buttons_down())
@@ -304,13 +313,13 @@ def on_pop(active: bool):
             if setting_pop_repeat.get() >= 1:
                 actions.core.repeat_command(1)
             else:
-                ctrl.mouse_click(button=0, hold=16000)
+                actions.user.mouse_click_left()
         else:
             actions.core.repeat_command(1)
     # In sleep mode
     else:
         if eye_mouse.mouse.attached_tracker is not None:
-            ctrl.mouse_click(button=0, hold=16000)
+            actions.user.mouse_click_left()
         actions.user.talon_wake_on_pop()
 
 noise.register("pop", on_pop)
