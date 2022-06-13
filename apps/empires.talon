@@ -39,10 +39,7 @@ offensive: key(a)
 defensive: key(s)
 stand ground: key(d)
 
-eh: skip()
-
-parrot(ee):
-    print('parrot_ee')
+parrot(dental_click):
     user.mouse_drag(0)
 
 parrot(palate_click):
