@@ -26,6 +26,24 @@ first message:
   mouse_click()
 
 copy login:
+  mouse_move(932, 327)
+  mouse_click()
+  mouse_click()
+  sleep(100ms)
+  edit.copy()
+  sleep(100ms)
+  key(delete)
+  sleep(100ms)
+  key(super-4)
+  sleep(300ms)
+  key(tab)
+  sleep(100ms)
+  edit.paste()
+  sleep(100ms)
+  key(backspace)
+  # key(enter)
+
+copy login old:
   #mimic("first message")
   mouse_move(893, 367)
   mouse_click()
