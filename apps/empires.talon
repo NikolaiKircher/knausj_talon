@@ -39,13 +39,6 @@ offensive: key(a)
 defensive: key(s)
 stand ground: key(d)
 
-parrot(dental_click):
-    user.mouse_drag(0)
-
-parrot(palate_click):
-    print('palate_click')
-    mouse_click(1)
-
 settings():
     #key_hold = 150
 
