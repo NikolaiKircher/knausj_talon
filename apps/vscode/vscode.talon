@@ -291,7 +291,7 @@ term trash: user.vscode("workbench.action.terminal.kill")
 term toggle: user.vscode_and_wait("workbench.action.terminal.toggleTerminal")
 term scroll up: user.vscode("workbench.action.terminal.scrollUp")
 term scroll down: user.vscode("workbench.action.terminal.scrollDown")
-term <number_small>: user.vscode_terminal(number_small)
+terminal <number_small>: user.vscode_terminal(number_small)
 
 #TODO: should this be added to linecommands?
 copy line down: user.vscode("editor.action.copyLinesDownAction")
