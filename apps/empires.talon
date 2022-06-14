@@ -1,6 +1,6 @@
 title: /Empires/
-# and mode: user.single_application
-# and not mode: sleep
+and mode: user.single_application
+and not mode: sleep
 -
 <user.number_string>: "{number_string}"
 
@@ -13,6 +13,18 @@ peace:
 #     mimic('shifter')
 #     user.pop_repeat_activate()
 
+many houses:
+    key(q q)
+    key(shift:down)
+
+many farms:
+    key(q a)
+    key(shift:down)
+
+over: key(shift:up)
+
+# blank point stack;,c
+# army: key(;)
 build house: key(q q)
 build mill: key(q w)
 build mining: key(q e)
