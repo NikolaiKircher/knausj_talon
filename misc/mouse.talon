@@ -44,7 +44,7 @@ fish:
 	key("{modifiers}:up")
 	# close the mouse grid
 	user.grid_close()
-<user.modifiers> righty:
+<user.modifiers> king:
 	key("{modifiers}:down")
 	mouse_click(1)
 	key("{modifiers}:up")
