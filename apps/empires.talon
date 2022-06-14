@@ -4,6 +4,15 @@ title: /Empires/
 -
 <user.number_string>: "{number_string}"
 
+peace:
+  key(shift:down)
+  mouse_click(1)
+  key(shift:up)
+
+# again:
+#     mimic('shifter')
+#     user.pop_repeat_activate()
+
 build house: key(q q)
 build mill: key(q w)
 build mining: key(q e)
@@ -11,7 +20,7 @@ build lumber: key(q r)
 build farm: key(q a)
 build smith: key(q s)
 build market: key(q d)
-build chapel: key(q f)
+build monastery: key(q f)
 build university: key(q g)
 
 build barack: key(w q)
@@ -21,6 +30,7 @@ build siege: key(w r)
 
 take smith: key(ctrl-shift-s)
 take university: key(ctrl-shift-u)
+take market: key(ctrl-m)
 
 take town: key(ctrl-shift-h)
 take barack: key(ctrl-shift-b)
