@@ -12,7 +12,7 @@ right: key(right)
 nope: key(z)
 restart game: key(r)
 
-clap: key(enter)
+shock: key(enter)
 scrape: key(escape)
 
 control mouse: user.mouse_toggle_control_mouse()

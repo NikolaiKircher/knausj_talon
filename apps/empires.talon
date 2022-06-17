@@ -9,6 +9,23 @@ peace:
   mouse_click(1)
   key(shift:up)
 
+
+scrape: key(escape)
+
+control mouse: user.mouse_toggle_control_mouse()
+party <number_small>: key("ctrl-{number_small}")
+
+<user.number_small>: "{number_small}"
+<user.symbol_key>: key(symbol_key)
+<user.letter>: key(letter)
+<user.function_key>: key(function_key)
+<user.special_key>: key(special_key)
+<user.modifiers> <user.unmodified_key>: key("{modifiers}-{unmodified_key}")
+
+duke:
+	mouse_click()
+	mouse_click()
+
 # again:
 #     mimic('shifter')
 #     user.pop_repeat_activate()
@@ -25,20 +42,21 @@ over: key(shift:up)
 
 # blank point stack;,c
 # army: key(;)
-build house: key(q q)
-build mill: key(q w)
-build mining: key(q e)
-build lumber: key(q r)
-build farm: key(q a)
-build smith: key(q s)
-build market: key(q d)
-build monastery: key(q f)
-build university: key(q g)
+make house: key(q q)
+make mill: key(q w)
+make mining: key(q e)
+make lumber: key(q r)
+make farm: key(q a)
+make smith: key(q s)
+make market: key(q d)
+make monastery: key(q f)
+make university: key(q g)
 
-build barack: key(w q)
-build range: key(w w)
-build stable: key(w e)
-build siege: key(w r)
+make barack: key(w q)
+make range: key(w w)
+make stable: key(w e)
+make siege: key(w r)
+make castle: key(w c)
 
 take smith: key(ctrl-shift-s)
 take university: key(ctrl-shift-u)
