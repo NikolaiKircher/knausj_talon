@@ -2,7 +2,7 @@ import os
 
 from talon import Module, actions, app, clip, cron, ctrl, imgui, noise, ui
 from talon_plugins import eye_mouse, eye_zoom_mouse
-from talon_plugins.eye_mouse import config, toggle_camera_overlay, toggle_control
+from talon_plugins.eye_mouse import config, toggle_camera_overlay
 
 key = actions.key
 self = actions.self
@@ -117,7 +117,7 @@ class Actions:
 
     def mouse_wake():
         """Enable control mouse"""
-        toggle_control(True)
+        actions.tracking.control_toggle(True)
         # eye_zoom_mouse.toggle_zoom_mouse(True)
         # eye_mouse.control_mouse.enable()
         # if setting_mouse_wake_hides_cursor.get() >= 1:
@@ -129,10 +129,7 @@ class Actions:
 
     def mouse_toggle_control_mouse(enabled: bool = None):
         """Toggles control mouse. Pass in a bool to enable it, otherwise toggle the current state"""
-        if enabled is not None:
-            toggle_control(enabled)
-        else:
-            toggle_control(not config.control_mouse)
+        actions.tracking.control_toggle(enabled)
 
     def mouse_toggle_camera_overlay():
         """Toggles camera overlay"""
@@ -181,7 +178,7 @@ class Actions:
     def mouse_sleep():
         """Disables control mouse, zoom mouse, and re-enables cursor"""
         eye_zoom_mouse.toggle_zoom_mouse(False)
-        toggle_control(False)
+        actions.tracking.control_toggle(False)
         show_cursor_helper(True)
         stop_scroll()
 
@@ -257,7 +254,7 @@ class Actions:
         # enable 'control mouse' if eye tracker is present and not enabled already
         global control_mouse_forced
         if eye_mouse.tracker is not None and not config.control_mouse:
-            toggle_control(True)
+            actions.tracking.control_toggle(True)
             control_mouse_forced = True
 
     def copy_mouse_position():
@@ -309,7 +306,7 @@ def show_cursor_helper(show):
 def on_pop(active: bool):
     # Talon is awake
     if actions.speech.enabled():
-        if eye_mouse.mouse.attached_tracker is not None:
+        if actions.tracking.control_enabled():
             if setting_pop_repeat.get() >= 1:
                 actions.core.repeat_command(1)
             else:
@@ -318,7 +315,7 @@ def on_pop(active: bool):
             actions.core.repeat_command(1)
     # In sleep mode
     else:
-        if eye_mouse.mouse.attached_tracker is not None:
+        if actions.tracking.control_enabled():
             actions.user.mouse_click_left()
         actions.user.talon_wake_on_pop()
 
@@ -396,7 +393,7 @@ def stop_scroll():
 
     global control_mouse_forced
     if control_mouse_forced and config.control_mouse:
-        toggle_control(False)
+        actions.tracking.control_toggle(False)
         control_mouse_forced = False
 
     scroll_job = None
