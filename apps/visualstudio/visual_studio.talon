@@ -86,7 +86,7 @@ fold toggle all: key(ctrl-m ctrl-l)
 fold definitions: key(ctrl-m ctrl-o)
 
 #Debugging
-break point: key(f9)
+# break point: key(f9)
 step over: key(f10)
 debug step into: key(f11)
 debug step out [of]: key(f10)
