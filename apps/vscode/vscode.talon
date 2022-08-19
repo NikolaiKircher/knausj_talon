@@ -12,6 +12,11 @@ tag(): user.tabs
 search result:
     key("tab:6 down")
 
+# toggle extended search
+search result toggle:
+    user.vscode("workbench.view.search")
+    key("tab:4 enter")
+
 copy paste:
     edit.copy()
     sleep(50ms)
