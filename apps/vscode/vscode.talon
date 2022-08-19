@@ -26,9 +26,14 @@ file save as: user.vscode("workbench.action.files.saveAs")
 
 tab only: user.vscode("workbench.action.closeOtherEditors")
 # split open: user.vscode("git.openFile")
+
 hash box:
   insert('[""]')
   key(left)
+  key(left)
+
+string box:
+  insert('#{}')
   key(left)
 
 cross: user.split_next()
@@ -45,6 +50,13 @@ cuke lint project: user.vscode_with_plugin("workbench.action.tasks.runTask", "cu
 erb lint project: user.vscode_with_plugin("workbench.action.tasks.runTask", "erb lint project")
 
 cucumber file: user.vscode_with_plugin("workbench.action.tasks.runTask", "cucumber file")
+
+prepare cucumber:
+    user.vscode("copyFilePath")
+    user.vscode("workbench.action.terminal.focus")
+    sleep(500ms)
+    insert('GUI=1 bec ')
+    edit.paste()
 
 task repeat: user.vscode("workbench.action.tasks.reRunTask")
 
