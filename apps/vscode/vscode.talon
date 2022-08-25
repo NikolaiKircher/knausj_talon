@@ -28,6 +28,7 @@ search extension:
     mouse_click()
 
 file save as: user.vscode("workbench.action.files.saveAs")
+fix line indentation: user.vscode("editor.action.reindentlines")
 
 tab only: user.vscode("workbench.action.closeOtherEditors")
 # split open: user.vscode("git.openFile")
@@ -47,8 +48,8 @@ rspec line: user.vscode("extension.runLineOnRspec")
 rspec file: user.vscode("extension.runFileOnRspec")
 rspec repeat: user.vscode("extension.runOnLastSpec")
 
-rubocop file: user.vscode_with_plugin("workbench.action.tasks.runTask", "rubocop file")
-rubocop project: user.vscode_with_plugin("workbench.action.tasks.runTask", "rubocop project")
+captain file: user.vscode_with_plugin("workbench.action.tasks.runTask", "rubocop file")
+captain project: user.vscode_with_plugin("workbench.action.tasks.runTask", "rubocop project")
 
 lint project: user.vscode_with_plugin("workbench.action.tasks.runTask", "lint project")
 cuke lint project: user.vscode_with_plugin("workbench.action.tasks.runTask", "cuke lint project")
@@ -60,7 +61,7 @@ prepare cucumber:
     user.vscode("copyFilePath")
     user.vscode("workbench.action.terminal.focus")
     sleep(500ms)
-    insert('GUI=1 bec ')
+    insert(' GUI=1 bec ')
     edit.paste()
 
 task repeat: user.vscode("workbench.action.tasks.reRunTask")
@@ -90,7 +91,7 @@ term test:
     key(up enter)
     user.vscode("workbench.action.toggleMaximizedPanel")
 
-term cop:
+term captain:
     user.vscode("workbench.action.terminal.focus")
     sleep(50ms)
     insert('rubocop -a --force-default-config ')
