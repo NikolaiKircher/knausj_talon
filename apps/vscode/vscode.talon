@@ -61,7 +61,8 @@ prepare cucumber:
     user.vscode("copyFilePath")
     user.vscode("workbench.action.terminal.focus")
     sleep(500ms)
-    insert(' GUI=1 bec ')
+    key(esc)
+    insert('GUI=1 bec ')
     edit.paste()
 
 task repeat: user.vscode("workbench.action.tasks.reRunTask")
