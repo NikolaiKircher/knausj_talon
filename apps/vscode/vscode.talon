@@ -61,9 +61,25 @@ prepare cucumber:
     user.vscode("copyFilePath")
     user.vscode("workbench.action.terminal.focus")
     sleep(500ms)
-    key(esc)
+    key(delete)
     insert('GUI=1 bec ')
     edit.paste()
+
+prepare sqlite:
+    user.vscode("workbench.action.terminal.focus")
+    sleep(500ms)
+    key(delete)
+    insert('export DATABASE_URL=sqlite3:db/test.sqlite3')
+    key(enter)
+    insert('ruby bin/change_sql_schema.rb')
+
+prepare oracle:
+    user.vscode("workbench.action.terminal.focus")
+    sleep(500ms)
+    key(delete)
+    insert('unset DATABASE_URL')
+    key(enter)
+    insert('git checkout HEAD -- db/schema.rb')
 
 task repeat: user.vscode("workbench.action.tasks.reRunTask")
 
