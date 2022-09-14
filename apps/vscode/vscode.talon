@@ -30,7 +30,7 @@ search extension:
 file save as: user.vscode("workbench.action.files.saveAs")
 fix line indentation: user.vscode("editor.action.reindentlines")
 
-tab only: user.vscode("workbench.action.closeOtherEditors")
+tab close other: user.vscode("workbench.action.closeOtherEditors")
 # split open: user.vscode("git.openFile")
 
 hash box:

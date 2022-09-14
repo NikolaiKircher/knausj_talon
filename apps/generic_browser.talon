@@ -1,9 +1,5 @@
 tag: browser
 -
-# requires vimium with this mapping:
-# map <c-x> closeOtherTabs
-tab only: key(ctrl-x)
-
 ticket copy | copy number:
     browser.focus_address()
     sleep(50ms)
