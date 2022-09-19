@@ -94,8 +94,13 @@ change discard: key(ctrl-k ctrl-r)
 git blame: user.vscode("gitlens.toggleFileBlameInDiffLeft")
 git blame toggle: user.vscode("gitlens.toggleLineBlame")
 git head: user.vscode("gitlens.openWorkingFile")
-# maybe use git diff instead?
+git compare to master:
+    user.vscode("gitlens.diffWithRevisionFrom")
+    sleep(450ms)
+    insert('master')
 git compare:
+    user.vscode("gitlens.diffWithRevisionFrom")
+git compare last:
     key(ctrl-shift-g)
     key(,)
 git compare next:
@@ -176,6 +181,18 @@ wrap switch: user.vscode("editor.action.toggleWordWrap")
 zen switch: user.vscode("workbench.action.toggleZenMode")
 
 # File Commands
+file snipe [<user.text>]:
+    user.vscode("workbench.action.quickOpen")
+    sleep(50ms)
+    insert(text or "")
+    sleep(450ms)
+    key(enter)
+file pasta:
+    user.vscode("workbench.action.quickOpen")
+    sleep(50ms)
+    edit.paste()
+    sleep(450ms)
+    key(enter)
 file hunt [<user.text>]:
     user.vscode("workbench.action.quickOpen")
     sleep(50ms)
