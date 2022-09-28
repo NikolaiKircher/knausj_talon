@@ -181,11 +181,11 @@ wrap switch: user.vscode("editor.action.toggleWordWrap")
 zen switch: user.vscode("workbench.action.toggleZenMode")
 
 # File Commands
-file snipe [<user.text>]:
+file snipe <user.text>:
     user.vscode("workbench.action.quickOpen")
     sleep(50ms)
-    insert(text or "")
-    sleep(450ms)
+    insert(text)
+    sleep(800ms)
     key(enter)
 file pasta:
     user.vscode("workbench.action.quickOpen")
