@@ -18,15 +18,15 @@ message unread: key(ctrl-u)
 message read: key(ctrl-q)
 
 new messages:
-  mouse_move(59, 237)
+  mouse_move(147, 206)
   mouse_click()
 
 first message:
-  mouse_move(490, 267)
+  mouse_move(465, 213)
   mouse_click()
 
 copy login:
-  mouse_move(932, 327)
+  mouse_move(898, 268)
   mouse_click()
   mouse_click()
   sleep(100ms)
@@ -42,23 +42,6 @@ copy login:
   sleep(100ms)
   key(backspace)
   # key(enter)
-
-copy login old:
-  #mimic("first message")
-  mouse_move(893, 367)
-  mouse_click()
-  mouse_click()
-  sleep(100ms)
-  edit.copy()
-  sleep(100ms)
-  key(delete)
-  sleep(100ms)
-  key(super-4)
-  sleep(300ms)
-  key(tab)
-  sleep(100ms)
-  edit.paste()
-
 
 # documentation
 # https://support.microsoft.com/en-us/office/keyboard-shortcuts-for-outlook-3cdeb221-7ae5-4c1d-8c1d-9e63216c1efd
