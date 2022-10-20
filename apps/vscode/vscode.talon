@@ -197,10 +197,17 @@ file hunt [<user.text>]:
     user.vscode("workbench.action.quickOpen")
     sleep(50ms)
     insert(text or "")
+file hunt (pace | paste):
+    user.vscode("workbench.action.quickOpen")
+    sleep(50ms)
+    edit.paste()
+file copy name: user.vscode("fileutils.copyFileName")
 file copy path: user.vscode("copyFilePath")
 file copy local [path]: user.vscode("copyRelativeFilePath")
 file create sibling: user.vscode_and_wait("explorer.newFile")
 file create: user.vscode("workbench.action.files.newUntitledFile")
+file create relative: user.vscode("fileutils.newFile")
+file create root: user.vscode("fileutils.newFileAtRoot")
 file rename:
     user.vscode("fileutils.renameFile")
     sleep(150ms)
@@ -208,8 +215,8 @@ file move:
     user.vscode("fileutils.moveFile")
     sleep(150ms)
 file clone:
-	  user.vscode("fileutils.duplicateFile")
-	  sleep(150ms)
+    user.vscode("fileutils.duplicateFile")
+    sleep(150ms)
 file delete:
     user.vscode("fileutils.removeFile")
     sleep(150ms)
@@ -331,6 +338,7 @@ debug stopper: user.vscode("workbench.action.debug.stop")
 debug continue: user.vscode("workbench.action.debug.continue")
 debug restart: user.vscode("workbench.action.debug.restart")
 debug console: user.vscode("workbench.debug.action.toggleRepl")
+debug clean: user.vscode("workbench.debug.panel.action.clearReplAction")
 
 # Terminal
 term external: user.vscode("workbench.action.terminal.openNativeConsole")
@@ -351,14 +359,14 @@ copy line up: user.vscode("editor.action.copyLinesUpAction")
 
 #Expand/Shrink AST Selection
 select less: user.vscode("editor.action.smartSelect.shrink")
-select (more|this): user.vscode("editor.action.smartSelect.expand")
+select (more | this): user.vscode("editor.action.smartSelect.expand")
 
 minimap: user.vscode("editor.action.toggleMinimap")
 maximize: user.vscode("workbench.action.minimizeOtherEditors")
 restore: user.vscode("workbench.action.evenEditorWidths")
 
 #breadcrumb
-select breadcrumb: user.vscode('breadcrumbs.focusAndSelect')
+select breadcrumb: user.vscode("breadcrumbs.focusAndSelect")
 # Use `alt-left` and `alt-right` to navigate the bread crumb
 
 replace here:
@@ -377,9 +385,10 @@ select word: user.vscode("editor.action.addSelectionToNextFindMatch")
 skip word: user.vscode("editor.action.moveSelectionToNextFindMatch")
 
 # jupyter
-cell next: user.vscode("jupyter.gotoNextCellInFile")
-cell last: user.vscode("jupyter.gotoPrevCellInFile")
-cell run above: user.vscode("jupyter.runallcellsabove.palette")
-cell run: user.vscode("jupyter.runcurrentcell")
+cell next: user.vscode("notebook.focusNextEditor")
+cell last: user.vscode("notebook.focusPreviousEditor")
+cell run above: user.vscode("notebook.cell.executeCellsAbove")
+cell run: user.vscode("notebook.cell.execute")
 
 install local: user.vscode("workbench.extensions.action.installVSIX")
+preview markdown: user.vscode("markdown.showPreview")
