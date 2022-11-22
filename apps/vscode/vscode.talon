@@ -65,6 +65,17 @@ prepare cucumber:
     insert('GUI=1 bec ')
     edit.paste()
 
+prepare cucumber line <number>:
+    user.vscode("copyFilePath")
+    user.vscode("workbench.action.terminal.focus")
+    sleep(500ms)
+    key(delete)
+    insert('GUI=1 bec ')
+    edit.paste()
+    sleep(500ms)
+    insert(':')
+    insert(number)
+
 prepare sqlite:
     user.vscode("workbench.action.terminal.focus")
     sleep(500ms)
@@ -80,6 +91,10 @@ prepare oracle:
     insert('unset DATABASE_URL')
     key(enter)
     insert('git checkout HEAD -- db/schema.rb')
+
+insert frozen string:
+    mimic('pre file')
+    insert('# frozen_string_literal: true\n')
 
 task repeat: user.vscode("workbench.action.tasks.reRunTask")
 
