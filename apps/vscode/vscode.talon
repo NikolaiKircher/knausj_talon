@@ -127,6 +127,12 @@ term test:
     sleep(50ms)
     key(up enter)
 
+term restart:
+    user.vscode("workbench.action.terminal.focus")
+    sleep(50ms)
+    key(ctrl-u)
+    insert('restart\n')
+
 term captain:
     user.vscode("workbench.action.terminal.focus")
     sleep(50ms)
