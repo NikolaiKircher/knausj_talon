@@ -25,4 +25,4 @@ parrot(dental_click):
     user.mouse_drag(0)
 
 parrot(palatal_click):
-    mouse_click(1)
+    user.talon_wake()
