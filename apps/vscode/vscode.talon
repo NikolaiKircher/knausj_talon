@@ -27,6 +27,10 @@ search extension:
     mouse_move(374, 129)
     mouse_click()
 
+pin tab:
+    key('ctrl-k')
+    key('shift-enter')
+
 file save as: user.vscode("workbench.action.files.saveAs")
 fix line indentation: user.vscode("editor.action.reindentlines")
 
