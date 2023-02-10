@@ -13,4 +13,5 @@ ctx.lists["user.custom_vocabulary"] = [
     # 'rails',
     'rails routes',
     'restart',
+    'ViCode',
 ]

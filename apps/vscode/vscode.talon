@@ -31,6 +31,24 @@ pin tab:
     key('ctrl-k')
     key('shift-enter')
 
+# paste a step definition line into a feature file
+pastry:
+    edit.paste()
+    key(home ctrl-right del:3 space)
+    key(ctrl-f)
+    insert('$')
+    user.vscode("editor.action.nextMatchFindAction")
+    key(esc shift-end del)
+
+
+# paste a feature line into a step definition file
+stepdef:
+    edit.paste()
+    key(home ctrl-right del)
+    insert('(/^^')
+    key(backspace end)
+    insert('$/) do')
+
 file save as: user.vscode("workbench.action.files.saveAs")
 fix line indentation: user.vscode("editor.action.reindentlines")
 
