@@ -55,6 +55,9 @@ fix line indentation: user.vscode("editor.action.reindentlines")
 tab close other: user.vscode("workbench.action.closeOtherEditors")
 # split open: user.vscode("git.openFile")
 
+tab destroy:
+    user.vscode("workbench.action.closeActivePinnedEditor")
+
 hash box:
   insert('[""]')
   key(left)
