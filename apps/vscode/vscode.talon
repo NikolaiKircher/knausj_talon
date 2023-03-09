@@ -42,9 +42,9 @@ pastry:
     edit.paste()
     key(home ctrl-right del:3 space)
     key(ctrl-f)
-    insert('$')
+    insert(' do')
     user.vscode("editor.action.nextMatchFindAction")
-    key(esc shift-end del)
+    key(esc shift-end del backspace:3)
 
 
 # paste a feature line into a step definition file
