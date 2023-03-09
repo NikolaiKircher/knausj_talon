@@ -107,6 +107,18 @@ prepare cucumber line <number>:
     insert(':')
     insert(number)
 
+cucumber <number>:
+    user.vscode("copyFilePath")
+    user.vscode("workbench.action.terminal.focus")
+    sleep(500ms)
+    key(delete)
+    insert('GUI=1 bec ')
+    edit.paste()
+    sleep(500ms)
+    insert(':')
+    insert(number)
+    key(enter)
+
 prepare sqlite:
     user.vscode("workbench.action.terminal.focus")
     sleep(500ms)
