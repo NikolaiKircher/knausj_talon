@@ -17,6 +17,12 @@ search result toggle:
     user.vscode("workbench.view.search")
     key("tab:4 enter")
 
+toggle regex:
+    user.find_toggle_match_by_regex()
+
+toggle match case:
+    user.find_toggle_match_by_case()
+
 copy paste:
     edit.copy()
     sleep(50ms)
