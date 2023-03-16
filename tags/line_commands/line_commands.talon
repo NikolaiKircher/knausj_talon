@@ -20,18 +20,18 @@ clear [line] <number>:
 clear <number> until <number>:
     user.select_range(number_1, number_2)
     edit.delete()
-copy [line] <number>:
-    user.select_range(number, number)
-    edit.copy()
-copy <number> until <number>:
-    user.select_range(number_1, number_2)
-    edit.copy()
-cut [line] <number>:
-    user.select_range(number, number)
-    edit.cut()
-cut [line] <number> until <number>:
-    user.select_range(number_1, number_2)
-    edit.cut()
+# copy [line] <number>:
+#     user.select_range(number, number)
+#     edit.copy()
+# copy <number> until <number>:
+#     user.select_range(number_1, number_2)
+#     edit.copy()
+# cut [line] <number>:
+#     user.select_range(number, number)
+#     edit.cut()
+# cut [line] <number> until <number>:
+#     user.select_range(number_1, number_2)
+#     edit.cut()
 (paste | replace) <number> until <number>:
     user.select_range(number_1, number_2)
     edit.paste()

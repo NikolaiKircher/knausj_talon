@@ -181,6 +181,6 @@ cut line:
     edit.select_line()
     edit.cut()
 
-(pace | paste) all:
-    edit.select_all()
-    edit.paste()
+# (pace | paste) all:
+#     edit.select_all()
+#     edit.paste()
