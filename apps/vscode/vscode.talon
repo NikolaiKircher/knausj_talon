@@ -137,7 +137,7 @@ prepare oracle:
 
 insert frozen string:
     mimic('pre file')
-    insert('# frozen_string_literal: true\n')
+    insert('# frozen_string_literal: true\n\n')
 
 task repeat: user.vscode("workbench.action.tasks.reRunTask")
 
