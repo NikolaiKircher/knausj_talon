@@ -18,15 +18,15 @@ message unread: key(ctrl-u)
 message read: key(ctrl-q)
 
 new messages:
-  mouse_move(147, 206)
+  mouse_move(147, 272)
   mouse_click()
 
 first message:
-  mouse_move(465, 213)
+  mouse_move(367, 272)
   mouse_click()
 
 copy login:
-  mouse_move(804, 265)
+  mouse_move(864, 323)
   mouse_click()
   mouse_click()
   sleep(100ms)
