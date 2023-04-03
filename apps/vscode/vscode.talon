@@ -9,8 +9,11 @@ tag(): user.splits
 tag(): user.tabs
 
 # custom
-search result:
+result next:
     user.vscode("search.action.focusNextSearchResult")
+
+result last:
+    user.vscode("search.action.focusPreviousSearchResult")
 
 # toggle extended search
 search result toggle:
