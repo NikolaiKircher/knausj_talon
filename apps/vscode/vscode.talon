@@ -10,7 +10,7 @@ tag(): user.tabs
 
 # custom
 search result:
-    key("tab:6 down")
+    user.vscode("search.action.focusNextSearchResult")
 
 # toggle extended search
 search result toggle:
@@ -32,6 +32,24 @@ copy paste:
 search extension:
     mouse_move(374, 129)
     mouse_click()
+
+filter steps:
+    mouse_move(136, 124)
+    mouse_click()
+    edit.select_line()
+    insert("*steps.rb")
+
+filter features:
+    mouse_move(136, 124)
+    mouse_click()
+    edit.select_line()
+    insert("*.feature")
+
+filter nothing:
+    mouse_move(136, 124)
+    mouse_click()
+    edit.select_line()
+    key(backspace)
 
 pin tab:
     key('ctrl-k')
@@ -112,6 +130,7 @@ cucumber <number>:
     user.vscode("workbench.action.terminal.focus")
     sleep(500ms)
     key(delete)
+    key(ctrl-c)
     insert('GUI=1 bec ')
     edit.paste()
     sleep(500ms)
