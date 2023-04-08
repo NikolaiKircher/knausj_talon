@@ -26,3 +26,6 @@ snore [<phrase>]$:
 
 key(ctrl-f8):
     user.toggle_sleep()
+
+key(ctrl-f9):
+    user.mouse_toggle_control_mouse()
