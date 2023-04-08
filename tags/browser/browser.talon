@@ -1,5 +1,20 @@
 tag: browser
 -
+ticket copy | copy number:
+    browser.focus_address()
+    sleep(50ms)
+    key(right ctrl-shift-left ctrl-shift-left)
+    edit.copy()
+
+snip code:
+    insert('{{code}}')
+
+snip minus:
+    insert('(-)')
+
+snip plus:
+    insert('(+)')
+
 address bar | go address | go url: browser.focus_address()
 go page | page focus: browser.focus_page()
 address copy | url copy | copy address | copy url:

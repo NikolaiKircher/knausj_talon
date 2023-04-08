@@ -7,8 +7,8 @@ def setup_default_alphabet():
     """set up common default alphabet.
 
     no need to modify this here, change your alphabet using alphabet.csv"""
-    initial_default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split()
-    initial_letters_string = "abcdefghijklmnopqrstuvwxyz"
+    initial_default_alphabet = "air boat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip area oak uber"
+    initial_letters_string = "abcdefghijklmnopqrstuvwxyzäöü"
     initial_default_alphabet_dict = dict(
         zip(initial_default_alphabet, initial_letters_string)
     )
@@ -123,7 +123,7 @@ def letters(m) -> str:
 ctx = Context()
 modifier_keys = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
-    "alt": "alt",  #'alter': 'alt',
+    "salt": "alt",  #'alter': 'alt',
     "control": "ctrl",  #'troll':   'ctrl',
     "shift": "shift",  #'sky':     'shift',
     "super": "super",
@@ -137,10 +137,6 @@ ctx.lists["self.letter"] = alphabet_list
 # `punctuation_words` is for words you want available BOTH in dictation and as key names in command mode.
 # `symbol_key_words` is for key names that should be available in command mode, but NOT during dictation.
 punctuation_words = {
-    # TODO: I'm not sure why we need these, I think it has something to do with
-    # Dragon. Possibly it has been fixed by later improvements to talon? -rntz
-    "`": "`",
-    ",": ",",  # <== these things
     "back tick": "`",
     "comma": ",",
     # Workaround for issue with conformer b-series; see #946
@@ -148,11 +144,10 @@ punctuation_words = {
     "period": ".",
     "full stop": ".",
     "semicolon": ";",
-    "colon": ":",
+    # "colon": ":",
     "forward slash": "/",
     "question mark": "?",
     "exclamation mark": "!",
-    "exclamation point": "!",
     "asterisk": "*",
     "hash sign": "#",
     "number sign": "#",
@@ -162,64 +157,41 @@ punctuation_words = {
     "ampersand": "&",
     # Currencies
     "dollar sign": "$",
-    "pound sign": "£",
-    "hyphen": "-",
-    "L paren": "(",
-    "left paren": "(",
-    "R paren": ")",
-    "right paren": ")",
 }
 symbol_key_words = {
     "dot": ".",
     "point": ".",
     "quote": "'",
-    "question": "?",
-    "apostrophe": "'",
-    "L square": "[",
-    "left square": "[",
-    "square": "[",
-    "R square": "]",
-    "right square": "]",
+    "single": "'",
+    "double": '"',
     "slash": "/",
     "backslash": "\\",
     "minus": "-",
-    "dash": "-",
     "equals": "=",
     "plus": "+",
     "grave": "`",
     "tilde": "~",
     "bang": "!",
-    "down score": "_",
-    "underscore": "_",
+    "quest": "?",
+    "score": "_",
     "paren": "(",
+    "square": "[",
     "brace": "{",
-    "left brace": "{",
-    "brack": "{",
-    "bracket": "{",
-    "left bracket": "{",
-    "r brace": "}",
-    "right brace": "}",
-    "r brack": "}",
-    "r bracket": "}",
-    "right bracket": "}",
+    "repper": ")",
+    "racker": "]",
+    "racer": "}",
     "angle": "<",
-    "left angle": "<",
-    "less than": "<",
-    "rangle": ">",
-    "R angle": ">",
     "right angle": ">",
-    "greater than": ">",
     "star": "*",
-    "hash": "#",
+    "pound": "#",
     "percent": "%",
     "caret": "^",
     "amper": "&",
     "pipe": "|",
-    "dub quote": '"',
-    "double quote": '"',
-    # Currencies
+    "stack": ":",
+    "drip": ",",
     "dollar": "$",
-    "pound": "£",
+    "atsy": "@",
 }
 
 # make punctuation words also included in {user.symbol_keys}
@@ -235,24 +207,28 @@ ctx.lists["self.arrow_key"] = {
 }
 
 simple_keys = [
-    "end",
-    "enter",
+    # "end",
+    # "enter",
     "escape",
     "home",
     "insert",
     "pagedown",
     "pageup",
     "space",
-    "tab",
+    # "tab",
 ]
 
 alternate_keys = {
-    "wipe": "backspace",
+    "shock": "enter",
+    "scrape": "escape",
     "delete": "backspace",
-    #'junk': 'backspace',
-    "forward delete": "delete",
+    "junk": "backspace",
+    "trash": "delete",
+    "tail": "end",
+    "tax": "tab",
     "page up": "pageup",
     "page down": "pagedown",
+    "blank": "space",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):

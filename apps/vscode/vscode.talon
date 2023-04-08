@@ -7,6 +7,216 @@ tag(): user.multiple_cursors
 tag(): user.snippets
 tag(): user.splits
 tag(): user.tabs
+
+# custom
+result next:
+    user.vscode("search.action.focusNextSearchResult")
+
+result last:
+    user.vscode("search.action.focusPreviousSearchResult")
+
+# toggle extended search
+search result toggle:
+    user.vscode("workbench.view.search")
+    key("tab:4 enter")
+
+toggle regex:
+    user.find_toggle_match_by_regex()
+
+toggle match case:
+    user.find_toggle_match_by_case()
+
+copy paste:
+    edit.copy()
+    sleep(50ms)
+    edit.paste()
+
+# expand search options in sidebar
+search extension:
+    mouse_move(374, 129)
+    mouse_click()
+
+filter steps:
+    mouse_move(136, 124)
+    mouse_click()
+    edit.select_line()
+    insert("*steps.rb")
+
+filter features:
+    mouse_move(136, 124)
+    mouse_click()
+    edit.select_line()
+    insert("*.feature")
+
+filter nothing:
+    mouse_move(136, 124)
+    mouse_click()
+    edit.select_line()
+    key(backspace)
+
+pin tab:
+    key('ctrl-k')
+    key('shift-enter')
+
+# paste a step definition line into a feature file
+pastry:
+    edit.paste()
+    key(home ctrl-right del:3 space)
+    key(ctrl-f)
+    insert(' do')
+    user.vscode("editor.action.nextMatchFindAction")
+    key(esc shift-end del backspace:3)
+
+
+# paste a feature line into a step definition file
+stepdef:
+    edit.paste()
+    key(home ctrl-right del)
+    insert('(/^^')
+    key(backspace end)
+    insert('$/) do')
+
+file save as: user.vscode("workbench.action.files.saveAs")
+fix line indentation: user.vscode("editor.action.reindentlines")
+
+tab close other: user.vscode("workbench.action.closeOtherEditors")
+# split open: user.vscode("git.openFile")
+
+tab destroy:
+    user.vscode("workbench.action.closeActivePinnedEditor")
+
+hash box:
+  insert('[""]')
+  key(left)
+  key(left)
+
+string box:
+  insert('#{}')
+  key(left)
+
+cross: user.split_next()
+
+rspec line: user.vscode("extension.runLineOnRspec")
+rspec file: user.vscode("extension.runFileOnRspec")
+rspec repeat: user.vscode("extension.runOnLastSpec")
+
+captain file: user.vscode_with_plugin("workbench.action.tasks.runTask", "rubocop file")
+captain project: user.vscode_with_plugin("workbench.action.tasks.runTask", "rubocop project")
+
+lint project: user.vscode_with_plugin("workbench.action.tasks.runTask", "lint project")
+cuke lint project: user.vscode_with_plugin("workbench.action.tasks.runTask", "cuke lint project")
+erb lint project: user.vscode_with_plugin("workbench.action.tasks.runTask", "erb lint project")
+
+cucumber file: user.vscode_with_plugin("workbench.action.tasks.runTask", "cucumber file")
+
+prepare cucumber:
+    user.vscode("copyFilePath")
+    user.vscode("workbench.action.terminal.focus")
+    sleep(500ms)
+    key(delete)
+    insert('GUI=1 bec ')
+    edit.paste()
+
+prepare cucumber line <number>:
+    user.vscode("copyFilePath")
+    user.vscode("workbench.action.terminal.focus")
+    sleep(500ms)
+    key(delete)
+    insert('GUI=1 bec ')
+    edit.paste()
+    sleep(500ms)
+    insert(':')
+    insert(number)
+
+cucumber <number>:
+    user.vscode("copyFilePath")
+    user.vscode("workbench.action.terminal.focus")
+    sleep(500ms)
+    key(delete)
+    key(ctrl-c)
+    insert('GUI=1 bec ')
+    edit.paste()
+    sleep(500ms)
+    insert(':')
+    insert(number)
+    key(enter)
+
+prepare sqlite:
+    user.vscode("workbench.action.terminal.focus")
+    sleep(500ms)
+    key(delete)
+    insert('export DATABASE_URL=sqlite3:db/test.sqlite3')
+    key(enter)
+    insert('ruby bin/change_sql_schema.rb')
+
+prepare oracle:
+    user.vscode("workbench.action.terminal.focus")
+    sleep(500ms)
+    key(delete)
+    insert('unset DATABASE_URL')
+    key(enter)
+    insert('git checkout HEAD -- db/schema.rb')
+
+insert frozen string:
+    mimic('pre file')
+    insert('# frozen_string_literal: true\n\n')
+
+task repeat: user.vscode("workbench.action.tasks.reRunTask")
+
+comment to do:
+  insert("# TODO: ")
+
+git discard file: key(ctrl-g d)
+
+# revert selected ranges
+change discard: key(ctrl-k ctrl-r)
+
+git blame: user.vscode("gitlens.toggleFileBlameInDiffLeft")
+git blame toggle: user.vscode("gitlens.toggleLineBlame")
+git head: user.vscode("gitlens.openWorkingFile")
+git compare to master:
+    user.vscode("gitlens.diffWithRevisionFrom")
+    sleep(450ms)
+    insert('master')
+git compare:
+    user.vscode("gitlens.diffWithRevisionFrom")
+git compare last:
+    key(ctrl-shift-g)
+    key(,)
+git compare next:
+    key(ctrl-shift-g)
+    key(.)
+
+term test:
+    user.vscode("workbench.action.terminal.focus")
+    sleep(50ms)
+    key(up enter)
+
+term restart:
+    user.vscode("workbench.action.terminal.focus")
+    sleep(50ms)
+    key(ctrl-u)
+    insert('restart\n')
+
+term captain:
+    user.vscode("workbench.action.terminal.focus")
+    sleep(50ms)
+    insert('rubocop -a --force-default-config ')
+
+git reset soft:
+    user.vscode("workbench.action.terminal.focus")
+    sleep(50ms)
+    insert('git rs')
+
+prepare release:
+    user.vscode("workbench.action.terminal.focus")
+    sleep(500ms)
+    insert('bash bin/build_and_deploy_on_gitlab.sh ')
+
+term selected:
+    user.vscode("workbench.action.terminal.runSelectedText")
+
+# knausj
 window reload: user.vscode("workbench.action.reloadWindow")
 window close: user.vscode("workbench.action.closeWindow")
 #multiple_cursor.py support end
@@ -41,8 +251,8 @@ panel control: user.vscode("workbench.panel.repl.view.focus")
 panel output: user.vscode("workbench.panel.output.focus")
 panel problems: user.vscode("workbench.panel.markers.view.focus")
 panel switch: user.vscode("workbench.action.togglePanel")
-panel terminal: user.vscode("workbench.action.terminal.focus")
-focus editor: user.vscode("workbench.action.focusActiveEditorGroup")
+panel (terminal | term): user.vscode("workbench.action.terminal.focus")
+panel editor: user.vscode("workbench.action.focusActiveEditorGroup")
 
 # Settings
 show settings: user.vscode("workbench.action.openGlobalSettings")
@@ -63,6 +273,18 @@ wrap switch: user.vscode("editor.action.toggleWordWrap")
 zen switch: user.vscode("workbench.action.toggleZenMode")
 
 # File Commands
+file snipe <user.text>:
+    user.vscode("workbench.action.quickOpen")
+    sleep(50ms)
+    insert(text)
+    sleep(800ms)
+    key(enter)
+file pasta:
+    user.vscode("workbench.action.quickOpen")
+    sleep(50ms)
+    edit.paste()
+    sleep(450ms)
+    key(enter)
 file hunt [<user.text>]:
     user.vscode("workbench.action.quickOpen")
     sleep(50ms)
@@ -103,7 +325,7 @@ definition side: user.vscode("editor.action.revealDefinitionAside")
 references show: user.vscode("editor.action.goToReferences")
 hierarchy peek: user.vscode("editor.showCallHierarchy")
 references find: user.vscode("references-view.find")
-format that: user.vscode("editor.action.formatDocument")
+format that | beautify: user.vscode("editor.action.formatDocument")
 format selection: user.vscode("editor.action.formatSelection")
 imports fix: user.vscode("editor.action.organizeImports")
 problem next: user.vscode("editor.action.marker.nextInFiles")
@@ -183,10 +405,12 @@ git rebase abort: user.vscode("git.rebaseAbort")
 git reveal: user.vscode("git.revealInExplorer")
 git revert: user.vscode("git.revertChange")
 git stash: user.vscode("git.stash")
+git stash untracked: user.vscode("git.stashIncludeUntracked")
 git stash pop: user.vscode("git.stashPop")
 git status: user.vscode("workbench.scm.focus")
-git stage: user.vscode("git.stage")
+git stage file: user.vscode("git.stage")
 git stage all: user.vscode("git.stageAll")
+git stage selected: user.vscode("git.stageSelectedRanges")
 git sync: user.vscode("git.sync")
 git unstage: user.vscode("git.unstage")
 git unstage all: user.vscode("git.unstageAll")
@@ -230,11 +454,11 @@ terminal new: user.vscode("workbench.action.terminal.new")
 terminal next: user.vscode("workbench.action.terminal.focusNext")
 terminal last: user.vscode("workbench.action.terminal.focusPrevious")
 terminal split: user.vscode("workbench.action.terminal.split")
-terminal zoom: user.vscode("workbench.action.toggleMaximizedPanel")
+terminal zoom | termy: user.vscode("workbench.action.toggleMaximizedPanel")
 terminal trash: user.vscode("workbench.action.terminal.kill")
 terminal toggle: user.vscode_and_wait("workbench.action.terminal.toggleTerminal")
-terminal scroll up: user.vscode("workbench.action.terminal.scrollUp")
-terminal scroll down: user.vscode("workbench.action.terminal.scrollDown")
+term scroll up: user.vscode("workbench.action.terminal.scrollUp")
+term scroll down: user.vscode("workbench.action.terminal.scrollDown")
 terminal <number_small>: user.vscode_terminal(number_small)
 
 #TODO: should this be added to linecommands?

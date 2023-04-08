@@ -1,0 +1,4 @@
+URL Template,Name
+https://www.google.com/search?q=%s,google
+https://en.wikipedia.org/w/index.php?search=%s,wiki
+https://search.talonvoice.com/search/?q=%s,talonvoice

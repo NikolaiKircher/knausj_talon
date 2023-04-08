@@ -24,6 +24,7 @@ settings():
     user.code_public_variable_formatter = "SNAKE_CASE"
 
 args pipe: user.insert_between("|", "|")
+gate: user.insert_between("[", "]")
 
 # NOTE: this command is created for backward compatibility, but the documentation comments are not actually strings in Ruby.
 dock string: user.code_comment_documentation()
@@ -32,6 +33,8 @@ state end: "end"
 state begin: "begin"
 state rescue: "rescue "
 state module: "module "
+state where: "where"
+state raise: "raise "
 
 ^instance <user.text>$:
     insert("@")

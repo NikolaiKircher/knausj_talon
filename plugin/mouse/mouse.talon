@@ -1,24 +1,42 @@
-control mouse: tracking.control_toggle()
-zoom mouse: tracking.control_zoom_toggle()
-camera overlay: tracking.control_debug_toggle()
-run calibration: tracking.calibrate()
+coffee | control mouse: user.mouse_toggle_control_mouse()
+zoom mouse: user.mouse_toggle_zoom_mouse()
+camera overlay: user.mouse_toggle_camera_overlay()
+run calibration: user.mouse_calibrate()
 touch:
-    mouse_click(0)
+	user.mouse_click_left()
+
+    #mouse_click(0)
     # close the mouse grid if open
-    user.grid_close()
+    #user.grid_close()
     # End any open drags
     # Touch automatically ends left drags so this is for right drags specifically
-    user.mouse_drag_end()
+    #user.mouse_drag_end()
 
-righty:
+king:
     mouse_click(1)
     # close the mouse grid if open
-    user.grid_close()
+    # user.grid_close()
 
 mid click:
     mouse_click(2)
     # close the mouse grid
     user.grid_close()
+
+contouch:
+  key(ctrl:down)
+  mouse_click(0)
+  key(ctrl:up)
+
+shifter:
+  key(shift:down)
+  mouse_click(0)
+  key(shift:up)
+
+fish:
+  key(shift:down)
+  mouse_click(0)
+  key(shift:up)
+	edit.copy()
 
 #see keys.py for modifiers.
 #defaults
@@ -33,7 +51,7 @@ mid click:
     key("{modifiers}:up")
     # close the mouse grid
     user.grid_close()
-<user.modifiers> righty:
+<user.modifiers> king:
     key("{modifiers}:down")
     mouse_click(1)
     key("{modifiers}:up")

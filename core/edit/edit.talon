@@ -2,21 +2,21 @@ find it: edit.find()
 
 next one: edit.find_next()
 
-go word left: edit.word_left()
+drain | go word left: edit.word_left()
 
-go word right: edit.word_right()
+step | go word right: edit.word_right()
 
-go left: edit.left()
+drill | go left: edit.left()
 
-go right: edit.right()
+push | go right: edit.right()
 
-go up: edit.up()
+go north | go up: edit.up()
 
 go down: edit.down()
 
 go line start: edit.line_start()
 
-go line end: edit.line_end()
+tail | go line end: edit.line_end()
 
 go way left:
     edit.line_start()
@@ -37,7 +37,7 @@ go page down: edit.page_down()
 go page up: edit.page_up()
 
 # selecting
-select line: edit.select_line()
+seagull | select line: edit.select_line()
 
 select all: edit.select_all()
 
@@ -64,9 +64,9 @@ select way up: edit.extend_file_start()
 select way down: edit.extend_file_end()
 
 # editing
-indent [more]: edit.indent_more()
+# indent [more]: edit.indent_more()
 
-(indent less | out dent): edit.indent_less()
+# (indent less | out dent): edit.indent_less()
 
 # deleting
 clear line: edit.delete_line()
@@ -85,11 +85,11 @@ clear down:
 
 clear word: edit.delete_word()
 
-clear word left:
+clear word left | ash:
     edit.extend_word_left()
     edit.delete()
 
-clear word right:
+clear word right | fire:
     edit.extend_word_right()
     edit.delete()
 
@@ -144,9 +144,9 @@ copy line:
     edit.copy()
 
 #cut commands
-cut all:
-    edit.select_all()
-    edit.cut()
+# cut all:
+#     edit.select_all()
+#     edit.cut()
 #to do: do we want these variants
 # cut left:
 #      edit.select_all()

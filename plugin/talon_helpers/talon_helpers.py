@@ -5,7 +5,7 @@ import re
 from itertools import islice
 from typing import Union
 
-from talon import Module, actions, app, clip, registry, scope, speech_system, ui
+from talon import Module, Context, actions, app, clip, registry, scope, speech_system, ui
 from talon.grammar import Phrase
 
 pp = pprint.PrettyPrinter()
@@ -18,6 +18,24 @@ pattern = re.compile(r"[A-Z][a-z]*|[a-z]+|\d")
 def create_name(text, max_len=20):
     return "_".join(list(islice(pattern.findall(text), max_len))).lower()
 
+
+ctx_win = Context()
+ctx_win.matches = r"""
+os: windows
+"""
+
+@mod.action_class
+class Actions:
+    def talon_restart():
+        """Quit and relaunch the Talon app"""
+
+
+@ctx_win.action_class("user")
+class WinUserActions:
+    def talon_restart():
+        talon_app = ui.apps(pid=os.getpid())[0]
+        os.startfile(talon_app.exe)
+        talon_app.quit()
 
 @mod.action_class
 class Actions:
