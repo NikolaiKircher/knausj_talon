@@ -2,16 +2,11 @@
 mode: all
 -
 ^talon wake$:
-    speech.enable()
+    user.talon_wake()
 
 ^welcome back$:
     user.mouse_wake()
-    speech.enable()
-
-# parrot(palate_click):
-#     print('palate_click')
-#     user.mouse_wake()
-#     speech.enable()
+    user.talon_wake()
 
 ^sleep all [<phrase>]$:
     user.switcher_hide_running()
@@ -19,17 +14,15 @@ mode: all
     user.homophones_hide()
     user.help_hide()
     user.mouse_sleep()
-    speech.disable()
+    user.talon_sleep()
     user.engine_sleep()
 
-talon sleep [<phrase>]$: speech.disable()
+talon sleep [<phrase>]$:
+    user.talon_sleep()
 
 snore [<phrase>]$:
     user.mouse_sleep()
-    speech.disable()
+    user.talon_sleep()
 
 key(ctrl-f8):
-    speech.toggle()
-
-key(ctrl-f9):
-    user.mouse_toggle_control_mouse()
+    user.toggle_sleep()

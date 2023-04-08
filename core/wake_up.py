@@ -16,8 +16,22 @@ class Actions:
 
     def talon_wake():
         """Wake talon and discard previously recognized speech"""
-        # this is not working. maybe I need more RAM?
+        # this is only working with delay. maybe maybe try out abort_current_phrase
         # active_microphone = actions.sound.active_microphone()
         # actions.sound.set_microphone("None")
         # actions.sound.set_microphone(active_microphone)
+        # actions.user.abort_current_phrase()
         actions.speech.enable()
+        actions.user.notify("talon wake")
+
+    def talon_sleep():
+        """Put talon to sleep"""
+        actions.speech.disable()
+        actions.user.notify("talon sleep")
+
+    def toggle_sleep():
+        """Toggle between wake and sleep"""
+        if actions.speech.enabled():
+            actions.user.talon_sleep()
+        else:
+            actions.user.talon_wake()
