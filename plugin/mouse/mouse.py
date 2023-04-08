@@ -311,8 +311,9 @@ def on_pop(active: bool):
                 actions.core.repeat_command(1)
             else:
                 actions.user.mouse_click_left()
-        else:
-            actions.core.repeat_command(1)
+        # else:
+            # actions.core.repeat_command(1)
+
     # In sleep mode
     else:
         if actions.tracking.control_enabled():

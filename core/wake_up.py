@@ -14,6 +14,13 @@ class Actions:
             actions.user.talon_wake()
         time_last_pop = time.time()
 
+    def wake_or_repeat_phrase():
+        """Wakeup or repeat phrase"""
+        if actions.speech.enabled():
+            actions.core.repeat_phrase()
+        else:
+            actions.user.talon_wake()
+
     def talon_wake():
         """Wake talon and discard previously recognized speech"""
         # this is only working with delay. maybe maybe try out abort_current_phrase

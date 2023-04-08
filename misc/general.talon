@@ -31,4 +31,4 @@ parrot(dental_click):
     user.mouse_drag(0)
 
 parrot(palatal_click):
-    user.talon_wake()
+    user.wake_or_repeat_phrase()
