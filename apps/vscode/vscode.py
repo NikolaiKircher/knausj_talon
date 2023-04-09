@@ -1,4 +1,5 @@
 from talon import Context, Module, actions, app
+import re
 
 is_mac = app.platform == "mac"
 
@@ -154,6 +155,23 @@ class Actions:
         """Show command palette"""
         actions.key("ctrl-shift-p")
 
+    def vscode_take_word(cursorless_target: dict, repeats: int):
+        """Take word on cursorless target with number of repeats"""
+        actions.user.cursorless_command("setSelection", cursorless_target)
+        text = actions.edit.selected_text()
+
+        if re.match(r"[\wåäöÅÄÖ]", text):
+            actions.edit.right()
+        else:
+            repeats -= 1
+
+        # Select number of next instances
+        for _ in range(repeats):
+            actions.user.vscode("editor.action.addSelectionToNextFindMatch")
+
+        # Select all instances
+        if repeats < 0:
+            actions.user.vscode("editor.action.selectHighlights")
 
 @mac_ctx.action_class("user")
 class MacUserActions:
