@@ -1,7 +1,7 @@
 import os
 
-from talon import Module, actions, app, clip, cron, ctrl, imgui, noise, ui
-from talon_plugins import eye_mouse, eye_zoom_mouse
+from talon import Context, Module, actions, app, clip, cron, ctrl, imgui, noise, ui
+from talon_plugins import eye_zoom_mouse
 from talon_plugins.eye_mouse import config, toggle_camera_overlay
 
 key = actions.key
@@ -118,12 +118,11 @@ class Actions:
         show_cursor_helper(False)
 
     def mouse_wake():
-        """Enable control mouse"""
-        actions.tracking.control_toggle(True)
-        # eye_zoom_mouse.toggle_zoom_mouse(True)
-        # eye_mouse.control_mouse.enable()
-        # if setting_mouse_wake_hides_cursor.get() >= 1:
-        #     show_cursor_helper(False)
+        """Enable control mouse, zoom mouse, and disables cursor"""
+        actions.tracking.control_zoom_toggle(True)
+
+        if setting_mouse_wake_hides_cursor.get() >= 1:
+            show_cursor_helper(False)
 
     def mouse_calibrate():
         """Start calibration"""
@@ -179,7 +178,7 @@ class Actions:
 
     def mouse_sleep():
         """Disables control mouse, zoom mouse, and re-enables cursor"""
-        eye_zoom_mouse.toggle_zoom_mouse(False)
+        actions.tracking.control_zoom_toggle(False)
         actions.tracking.control_toggle(False)
         show_cursor_helper(True)
         stop_scroll()
@@ -255,7 +254,7 @@ class Actions:
 
         # enable 'control mouse' if eye tracker is present and not enabled already
         global control_mouse_forced
-        if eye_mouse.tracker is not None and not config.control_mouse:
+        if not actions.tracking.control_enabled():
             actions.tracking.control_toggle(True)
             control_mouse_forced = True
 
@@ -305,7 +304,8 @@ def show_cursor_helper(show):
         ctrl.cursor_visible(show)
 
 
-def on_pop(active: bool):
+@ctx.action("user.noise_trigger_pop")
+def on_pop():
     # Talon is awake
     if actions.speech.enabled():
         if actions.tracking.control_enabled():
@@ -388,7 +388,7 @@ def stop_scroll():
         cron.cancel(gaze_job)
 
     global control_mouse_forced
-    if control_mouse_forced and config.control_mouse:
+    if control_mouse_forced:
         actions.tracking.control_toggle(False)
         control_mouse_forced = False
 
