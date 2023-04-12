@@ -101,6 +101,7 @@ rspec file: user.vscode("extension.runFileOnRspec")
 rspec repeat: user.vscode("extension.runOnLastSpec")
 
 captain file: user.vscode_with_plugin("workbench.action.tasks.runTask", "rubocop file")
+captain file soft: user.vscode_with_plugin("workbench.action.tasks.runTask", "rubocop file soft")
 captain project: user.vscode_with_plugin("workbench.action.tasks.runTask", "rubocop project")
 
 lint project: user.vscode_with_plugin("workbench.action.tasks.runTask", "lint project")
