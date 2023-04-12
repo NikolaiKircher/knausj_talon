@@ -27,8 +27,8 @@ call join | call accept:
 pick <number_small>: key("down:{number_small-1} enter")
 pick up <number_small>: key("up:{number_small} enter")
 
-parrot(dental_click):
-    user.mouse_drag(0)
+# parrot(dental_click):
+#     user.mouse_drag(0)
 
 parrot(palatal_click):
     user.wake_or_repeat_phrase()
