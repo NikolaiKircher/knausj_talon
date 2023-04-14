@@ -79,11 +79,6 @@ stepdef:
 file save as: user.vscode("workbench.action.files.saveAs")
 fix line indentation: user.vscode("editor.action.reindentlines")
 
-tab close other: user.vscode("workbench.action.closeOtherEditors")
-# split open: user.vscode("git.openFile")
-
-tab destroy:
-    user.vscode("workbench.action.closeActivePinnedEditor")
 
 hash box:
   insert('[""]')
@@ -363,6 +358,11 @@ close other tabs: user.vscode("workbench.action.closeOtherEditors")
 close all tabs: user.vscode("workbench.action.closeAllEditors")
 close tabs way right: user.vscode("workbench.action.closeEditorsToTheRight")
 close tabs way left: user.vscode("workbench.action.closeEditorsToTheLeft")
+
+tab close other: user.vscode("workbench.action.closeOtherEditors")
+tab close unchanged: user.vscode(gitlens.closeUnchangedFiles)
+tab destroy: user.vscode("workbench.action.closeActivePinnedEditor")
+open changed files: user.vscode("gitlens.openChangedFiles")
 
 # Folding
 fold that: user.vscode("editor.fold")
