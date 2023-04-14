@@ -360,7 +360,7 @@ close tabs way right: user.vscode("workbench.action.closeEditorsToTheRight")
 close tabs way left: user.vscode("workbench.action.closeEditorsToTheLeft")
 
 tab close other: user.vscode("workbench.action.closeOtherEditors")
-tab close unchanged: user.vscode(gitlens.closeUnchangedFiles)
+tab close unchanged: user.vscode("gitlens.closeUnchangedFiles")
 tab destroy: user.vscode("workbench.action.closeActivePinnedEditor")
 open changed files: user.vscode("gitlens.openChangedFiles")
 
