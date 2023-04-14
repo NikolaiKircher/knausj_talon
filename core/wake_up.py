@@ -33,8 +33,9 @@ class Actions:
 
     def talon_sleep():
         """Put talon to sleep"""
+        if actions.speech.enabled():
+            actions.user.notify("talon sleep")
         actions.speech.disable()
-        actions.user.notify("talon sleep")
 
     def toggle_sleep():
         """Toggle between wake and sleep"""
