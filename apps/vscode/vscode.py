@@ -147,6 +147,15 @@ class WinActions:
 
 @mod.action_class
 class Actions:
+    def vscode_focus_files_to_include():
+        """Focus the search bar field 'files to include'"""
+        actions.user.vscode("workbench.action.focusActiveEditorGroup")
+        actions.sleep("50ms")
+        actions.user.vscode("workbench.view.search")
+        actions.sleep("50ms")
+        actions.user.vscode("search.focus.nextInputBox")
+        actions.sleep("50ms")
+
     def vscode_terminal(number: int):
         """Activate a terminal by number"""
         actions.user.vscode(f"workbench.action.terminal.focusAtIndex{number}")

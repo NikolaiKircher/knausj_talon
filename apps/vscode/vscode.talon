@@ -37,22 +37,20 @@ search extension:
     mouse_click()
 
 filter steps:
-    mouse_move(136, 124)
-    mouse_click()
-    edit.select_line()
+    user.vscode_focus_files_to_include()
     insert("*steps.rb")
 
 filter features:
-    mouse_move(136, 124)
-    mouse_click()
-    edit.select_line()
+    user.vscode_focus_files_to_include()
     insert("*.feature")
 
 filter nothing:
-    mouse_move(136, 124)
-    mouse_click()
-    edit.select_line()
+    user.vscode_focus_files_to_include()
     key(backspace)
+
+filter html:
+    user.vscode_focus_files_to_include()
+    insert("*.html.erb")
 
 pin tab:
     key('ctrl-k')
