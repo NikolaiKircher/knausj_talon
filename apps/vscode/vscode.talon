@@ -48,6 +48,10 @@ filter nothing:
     user.vscode_focus_files_to_include()
     key(backspace)
 
+filter yaml:
+    user.vscode_focus_files_to_include()
+    insert("*.yml")
+
 filter html:
     user.vscode_focus_files_to_include()
     insert("*.html.erb")
