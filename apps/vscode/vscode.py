@@ -153,6 +153,7 @@ class Actions:
         actions.sleep("50ms")
         actions.user.vscode("workbench.view.search")
         actions.sleep("50ms")
+        actions.key("ctrl-shift-f")
         actions.user.vscode("search.focus.nextInputBox")
         actions.sleep("50ms")
 
