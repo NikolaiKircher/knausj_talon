@@ -12,3 +12,5 @@ tab search <user.text>$:
     sleep(200ms)
     insert("{text}")
     key(down)
+
+hunt this: key("ctrl-f")
