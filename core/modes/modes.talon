@@ -27,8 +27,8 @@ not mode: sleep
 # Switch to dictation mode and insert a phrase
 dictate [<phrase>]$:        user.dictation_mode(phrase or "")
 
-# Switch to swedish dictation
-german [<phrase>]$:        user.german_mode(phrase or "")
+# Switch to german dictation
+inkling [<phrase>]$:        user.german_mode(phrase or "")
 
 # Switch to mixed mode and insert a phrase
 # mixed mode [<phrase>]$:     user.mixed_mode(phrase or "")
