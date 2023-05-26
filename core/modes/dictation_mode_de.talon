@@ -12,10 +12,11 @@ eingabe: "\n"
 zeilenumbruch:
   edit.line_insert_down()
 
-neuer (paragraf | graf):
-  edit.line_insert_down()
-  edit.line_insert_down()
-  user.dictation_format_reset()
+# use 'new graph' instead
+# neuer (paragraf | graf):
+#   edit.line_insert_down()
+#   edit.line_insert_down()
+#   user.dictation_format_reset()
 
 leer: " "
 
@@ -34,3 +35,6 @@ löschen: key("backspace")
 weg: key("ctrl-shift-left backspace")
 
 rückgängig: key("ctrl-z")
+
+# Escape, type things that would otherwise be commands
+^normal <user.text>$: user.dictation_insert(user.text)

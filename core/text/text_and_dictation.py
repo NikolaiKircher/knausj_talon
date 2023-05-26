@@ -32,7 +32,7 @@ ctx.lists["user.prose_modifiers"] = {
 ctx.lists["user.prose_snippets"] = {
     "spacebar": " ",
     "new line": "\n",
-    "new paragraph": "\n\n",
+    "new graph": "\n\n",
     # Curly quotes are used to obtain proper spacing for left and right quotes, but will later be straightened.
     "open quote": "“",
     "close quote": "”",
@@ -40,7 +40,6 @@ ctx.lists["user.prose_snippets"] = {
     "winky": ";-)",
     "frowny": ":-(",
 }
-
 
 @mod.capture(rule="{user.prose_modifiers}")
 def prose_modifier(m) -> Callable:
@@ -79,10 +78,14 @@ def word(m) -> str:
             actions.dictate.replace_words(actions.dictate.parse_words(m.word))
         )
 
-
-@mod.capture(rule="({user.vocabulary} | <phrase>)+")
-def text(m) -> str:
+@mod.capture
+def text() -> str:
     """A sequence of words, including user-defined vocabulary."""
+
+# The capture needs to be defined on the context to work with german dictation.
+@ctx.capture("user.text",
+    rule="({user.vocabulary} | <phrase>)+")
+def text(m) -> str:
     return format_phrase(m)
 
 
@@ -99,7 +102,7 @@ def prose(m) -> str:
 def raw_prose() -> str:
     """Mixed words and punctuation, auto-spaced & capitalized, without quote straightening and commands (for use in dictation mode)."""
 
-# The prose capture needs to be defined on the context to work with german dictation.
+# The capture needs to be defined on the context to work with german dictation.
 @ctx.capture("user.raw_prose",
     rule="({user.vocabulary} | {user.punctuation} | {user.prose_snippets} | <phrase> | <user.prose_number>)+"
 )
