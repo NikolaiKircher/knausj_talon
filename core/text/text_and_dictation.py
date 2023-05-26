@@ -15,7 +15,13 @@ setting_context_sensitive_dictation = mod.setting(
 
 mod.list("prose_modifiers", desc="Modifiers that can be used within prose")
 mod.list("prose_snippets", desc="Snippets that can be used within prose")
+
 ctx = Context()
+ctx.matches = r"""
+language: en
+language: de_DE
+"""
+
 # Maps spoken forms to DictationFormat method names (see DictationFormat below).
 ctx.lists["user.prose_modifiers"] = {
     "cap": "cap",
@@ -89,11 +95,15 @@ def prose(m) -> str:
     return apply_formatting(m).replace("“", '"').replace("”", '"')
 
 
-@mod.capture(
+@mod.capture
+def raw_prose() -> str:
+    """Mixed words and punctuation, auto-spaced & capitalized, without quote straightening and commands (for use in dictation mode)."""
+
+# The prose capture needs to be defined on the context to work with german dictation.
+@ctx.capture("user.raw_prose",
     rule="({user.vocabulary} | {user.punctuation} | {user.prose_snippets} | <phrase> | <user.prose_number>)+"
 )
 def raw_prose(m) -> str:
-    """Mixed words and punctuation, auto-spaced & capitalized, without quote straightening and commands (for use in dictation mode)."""
     return apply_formatting(m)
 
 

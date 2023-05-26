@@ -5,8 +5,7 @@ language: de_DE
 (kommando | over)$:
   user.command_mode()
 
-<phrase>:
-  user.insert_formatted(phrase, "NOOP")
+<user.raw_prose>: user.dictation_insert(raw_prose)
 
 eingabe: "\n"
 

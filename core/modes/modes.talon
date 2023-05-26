@@ -1,13 +1,14 @@
 not mode: sleep
 -
-^dictation mode$:
-    mode.disable("sleep")
-    mode.disable("command")
-    mode.enable("dictation")
-    user.code_clear_language_mode()
-    mode.disable("user.gdb")
+# call 'dictate' instead
+# ^dictation mode$:
+#     mode.disable("sleep")
+#     mode.disable("command")
+#     mode.enable("dictation")
+#     user.code_clear_language_mode()
+#     mode.disable("user.gdb")
 
-^command mode$:
+^commando$:
     user.command_mode()
     # mode.disable("sleep")
     # mode.disable("dictation")
@@ -19,10 +20,10 @@ not mode: sleep
     mode.disable("command")
     mode.enable("user.single_application")
 
-# ^mixed mode$:
-#     mode.disable("sleep")
-#     mode.enable("dictation")
-#     mode.enable("command")
+^mixed mode$:
+    mode.disable("sleep")
+    mode.enable("dictation")
+    mode.enable("command")
 
 # Switch to dictation mode and insert a phrase
 dictate [<phrase>]$:        user.dictation_mode(phrase or "")
