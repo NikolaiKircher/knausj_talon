@@ -2,8 +2,9 @@ mode: dictation
 language: de_DE
 -
 
-(kommando | over)$:
-  user.command_mode()
+# Switch to command mode and insert a phrase
+(kommando | over) [<phrase>]$:
+  user.command_mode(phrase or "")
 
 <user.raw_prose>: user.dictation_insert(raw_prose)
 
