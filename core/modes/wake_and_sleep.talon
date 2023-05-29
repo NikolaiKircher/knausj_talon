@@ -21,6 +21,12 @@ talon sleep [<phrase>]$:
     user.talon_sleep()
 
 snore [<phrase>]$:
+    user.notify("say scoot instead!")
+    user.mouse_sleep()
+    user.talon_sleep()
+
+scoot [<phrase>]$:
+    user.notify("talon sleep")
     user.mouse_sleep()
     user.talon_sleep()
 
