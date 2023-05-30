@@ -26,7 +26,7 @@ first message:
   mouse_click()
 
 copy login:
-  mouse_move(864, 323)
+  mouse_move(857, 297)
   mouse_click()
   mouse_click()
   sleep(100ms)
