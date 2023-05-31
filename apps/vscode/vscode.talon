@@ -267,8 +267,8 @@ show snippets: user.vscode("workbench.action.openSnippets")
 centered switch: user.vscode("workbench.action.toggleCenteredLayout")
 fullscreen switch: user.vscode("workbench.action.toggleFullScreen")
 theme switch: user.vscode("workbench.action.selectTheme")
-wrap switch: user.vscode("editor.action.toggleWordWrap")
-zen switch: user.vscode("workbench.action.toggleZenMode")
+wrap toggle: user.vscode("editor.action.toggleWordWrap")
+zen toggle: user.vscode("workbench.action.toggleZenMode")
 
 # File Commands
 file snipe <user.text>:
