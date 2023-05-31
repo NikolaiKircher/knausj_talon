@@ -1,4 +1,4 @@
-from talon import Module, cron, ui, actions
+from talon import Module, cron, ui
 from talon.canvas import Canvas
 from talon.skia import Paint as Paint
 from talon.skia.imagefilter import ImageFilter as ImageFilter
@@ -43,8 +43,7 @@ class Actions:
 
     def notify(text: str):
         """Show notification"""
-        if actions.speech.enabled():
-            show_text(text, is_subtitle=False)
+        show_text(text, is_subtitle=False)
 
 def get_screen_by_offset(screen: ui.Screen, offset: int) -> ui.Screen:
     screens = get_sorted_screens()
