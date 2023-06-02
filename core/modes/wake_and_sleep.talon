@@ -20,6 +20,10 @@ mode: all
 talon sleep [<phrase>]$:
     user.talon_sleep()
 
+snore [<phrase>]$:
+    user.mouse_sleep()
+    user.talon_sleep()
+
 pillow [<phrase>]$:
     user.mouse_sleep()
     user.talon_sleep()
