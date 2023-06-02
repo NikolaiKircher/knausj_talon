@@ -14,3 +14,11 @@ tab search <user.text>$:
     key(down)
 
 hunt this: key("ctrl-f")
+
+hunt flaky:
+    key(shift:down)
+    mouse_click(0)
+    key(shift:up)
+    edit.copy()
+    key("ctrl-f")
+    edit.paste()
