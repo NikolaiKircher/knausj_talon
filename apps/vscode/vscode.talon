@@ -60,6 +60,16 @@ pin tab:
     key('ctrl-k')
     key('shift-enter')
 
+file down:
+    user.vscode("workbench.scm.focus")
+    key(down enter)
+
+file up:
+    user.vscode("workbench.scm.focus")
+    key(up enter)
+
+jest: key(ctrl-space)
+
 # paste a step definition line into a feature file
 # pastry:
 #     edit.paste()
