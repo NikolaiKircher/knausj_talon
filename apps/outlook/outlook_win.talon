@@ -26,11 +26,13 @@ first message:
   mouse_click()
 
 copy login:
-  mouse_move(857, 297)
-  mouse_click()
-  mouse_click()
+  key(enter)
   sleep(100ms)
+  key(tab)
+  key(ctrl-right ctrl-right ctrl-shift-right shift-left)
   edit.copy()
+  sleep(100ms)
+  key(alt-f4)
   sleep(100ms)
   key(delete)
   sleep(100ms)
@@ -39,8 +41,6 @@ copy login:
   key(tab)
   sleep(100ms)
   edit.paste()
-  sleep(100ms)
-  key(backspace)
   # key(enter)
 
 # documentation
