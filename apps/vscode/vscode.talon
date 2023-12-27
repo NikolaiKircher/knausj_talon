@@ -52,6 +52,10 @@ filter yaml:
     user.vscode_focus_files_to_include()
     insert("*.yml")
 
+filter context:
+    user.vscode_focus_files_to_include()
+    insert("config/context/*.yml")
+
 filter html:
     user.vscode_focus_files_to_include()
     insert("*.html.erb")
