@@ -6,11 +6,13 @@ language: de_DE
 (kommando | over) [<phrase>]$:
   user.command_mode(phrase or "")
 
-<user.raw_prose>: user.dictation_insert(raw_prose)
+#<user.raw_prose>: user.dictation_insert(raw_prose)
+<user.raw_prose>: user.insert_formatted(raw_prose, "NOOP")
 
-wort <phrase>: user.insert_formatted(phrase, "NOOP")
+#wort <phrase>: user.insert_formatted(phrase, "NOOP")
 
 satz <phrase>: user.insert_formatted(phrase, "CAPITALIZE_FIRST_WORD")
+titel <phrase>: user.insert_formatted(phrase, "CAPITALIZE_FIRST_WORD")
 
 # Escape, type things that would otherwise be commands
 ^normal <user.text>$: user.dictation_insert(user.text)
