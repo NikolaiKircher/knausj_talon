@@ -22,3 +22,13 @@ hunt flaky:
     edit.copy()
     key("ctrl-f")
     edit.paste()
+
+set next version:
+    key(.)
+    sleep(0.2)
+    insert("version")
+    key(enter)
+    sleep(0.2)
+    insert("next_version")
+    sleep(0.2)
+    key(enter enter)
