@@ -61,8 +61,10 @@ filter html:
     insert("*.html.erb")
 
 pin tab:
-    key('ctrl-k')
-    key('shift-enter')
+    user.vscode("workbench.action.pinEditor")
+
+unpin tab:
+    user.vscode("workbench.action.unpinEditor")
 
 file down:
     user.vscode("workbench.scm.focus")
