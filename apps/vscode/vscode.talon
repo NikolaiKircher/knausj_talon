@@ -52,13 +52,19 @@ filter yaml:
     user.vscode_focus_files_to_include()
     insert("*.yml")
 
+filter context:
+    user.vscode_focus_files_to_include()
+    insert("config/context/*.yml")
+
 filter html:
     user.vscode_focus_files_to_include()
     insert("*.html.erb")
 
 pin tab:
-    key('ctrl-k')
-    key('shift-enter')
+    user.vscode("workbench.action.pinEditor")
+
+unpin tab:
+    user.vscode("workbench.action.unpinEditor")
 
 file down:
     user.vscode("workbench.scm.focus")

@@ -8,10 +8,10 @@ ctx.lists["user.custom_vocabulary"] = [
     'raise',
     'rescue',
     'ruby',
-    # 'vscode',
     'where',
     'rails',
     'rails routes',
+    'routes',
     'restart',
-    'ViCode',
+    'debugger',
 ]

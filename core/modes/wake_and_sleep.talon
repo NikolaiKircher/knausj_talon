@@ -24,10 +24,6 @@ snore [<phrase>]$:
     user.mouse_sleep()
     user.talon_sleep()
 
-pillow [<phrase>]$:
-    user.mouse_sleep()
-    user.talon_sleep()
-
 key(ctrl-f8):
     user.toggle_sleep()
 

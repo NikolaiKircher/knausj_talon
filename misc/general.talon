@@ -3,6 +3,8 @@ nope: key(ctrl-z)
 sup: user.mouse_scroll_up()
 clown: user.mouse_scroll_down()
 
+next year: "31.12.2024"
+
 # switch
 swat: key(alt-tab)
 
