@@ -37,3 +37,6 @@ pick up <number_small>: key("up:{number_small} enter")
 
 parrot(palatal_click):
     user.wake_or_repeat_phrase()
+
+output device:
+  key(super-ctrl-v)
