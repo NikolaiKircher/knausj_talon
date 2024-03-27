@@ -14,4 +14,7 @@ ctx.lists["user.custom_vocabulary"] = [
     'routes',
     'restart',
     'debugger',
+    'false',
+    'true',
+    'end',
 ]
