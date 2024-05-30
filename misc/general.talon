@@ -43,3 +43,9 @@ parrot(palatal_click):
 
 output device:
   key(super-ctrl-v)
+
+<user.formatters> form <user.cursorless_target>:
+  user.cursorless_reformat(cursorless_target, formatters)
+
+big <user.cursorless_target>:
+  user.cursorless_reformat(cursorless_target, 'title')
