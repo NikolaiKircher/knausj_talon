@@ -3,7 +3,7 @@ language: de_DE
 -
 
 # Switch to command mode and insert a phrase
-(kommando | over) [<phrase>]$:
+(kommando | kommandeur | over) [<phrase>]$:
   user.command_mode(phrase or "")
 
 #<user.raw_prose>: user.dictation_insert(raw_prose)
