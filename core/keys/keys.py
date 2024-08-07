@@ -185,7 +185,7 @@ symbol_key_words = {
     "star": "*",
     "pound": "#",
     "percent": "%",
-    "caret": "^",
+    # "caret": "^",
     "amper": "&",
     "pipe": "|",
     "stack": ":",
@@ -220,6 +220,7 @@ simple_keys = [
 
 alternate_keys = {
     "shock": "enter",
+    "shocker": "enter",
     "scrape": "escape",
     "delete": "backspace",
     "junk": "backspace",

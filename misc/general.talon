@@ -47,5 +47,5 @@ output device:
 <user.formatters> form <user.cursorless_target>:
   user.cursorless_reformat(cursorless_target, formatters)
 
-big <user.cursorless_target>:
+biggy <user.cursorless_target>:
   user.cursorless_reformat(cursorless_target, 'title')
