@@ -74,6 +74,7 @@ file up:
     user.vscode("workbench.scm.focus")
     key(up enter)
 
+# suggest
 jest: key(ctrl-space)
 
 # paste a step definition line into a feature file
@@ -176,10 +177,10 @@ task repeat: user.vscode("workbench.action.tasks.reRunTask")
 comment to do:
   insert("# TODO: ")
 
-git discard file: key(ctrl-g d)
+git discard file: user.vscode("git.clean")
 
 # revert selected ranges
-change discard: key(ctrl-k ctrl-r)
+change discard: user.vscode("git.revertSelectedRanges")
 
 git blame: user.vscode("gitlens.toggleFileBlameInDiffLeft")
 git blame toggle: user.vscode("gitlens.toggleLineBlame")
