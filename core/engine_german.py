@@ -14,6 +14,7 @@ info = W2lModelInfo(
     lexicon_path = str(model_path / 'lexicon.txt'),
     trie_path    = str(model_path / 'lexicon_flat.bin'),
     ort_patch    = ort_patch,
+    flags        = '',
 )
 
 w2l_de = W2lEngine(info=info, debug=True)
