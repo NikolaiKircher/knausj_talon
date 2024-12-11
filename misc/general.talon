@@ -20,7 +20,7 @@ meeting join:
   speech.disable()
 
 call join | call accept:
-  mouse_move(1783, 983)
+  mouse_move(1734, 909)
   mouse_click(0)
   user.mouse_sleep()
   speech.disable()
