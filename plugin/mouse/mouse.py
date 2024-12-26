@@ -2,7 +2,6 @@ import os
 
 from talon import Context, Module, actions, app, clip, cron, ctrl, imgui, noise, ui
 from talon_plugins import eye_zoom_mouse
-from talon_plugins.eye_mouse import config, toggle_camera_overlay
 
 key = actions.key
 self = actions.self
@@ -123,18 +122,6 @@ class Actions:
 
         if setting_mouse_wake_hides_cursor.get() >= 1:
             show_cursor_helper(False)
-
-    def mouse_calibrate():
-        """Start calibration"""
-        eye_mouse.calib_start()
-
-    def mouse_toggle_control_mouse(enabled: bool = None):
-        """Toggles control mouse. Pass in a bool to enable it, otherwise toggle the current state"""
-        actions.tracking.control_toggle(enabled)
-
-    def mouse_toggle_camera_overlay():
-        """Toggles camera overlay"""
-        toggle_camera_overlay(not config.show_camera)
 
     def mouse_toggle_zoom_mouse():
         """Toggles zoom mouse"""
