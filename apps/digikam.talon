@@ -1,4 +1,4 @@
-title: digiKam
-  -
+# title: digiKam
+#   -
 
-label: key(ctrl-alt-ö)
+# label: key(ctrl-alt-ö)
