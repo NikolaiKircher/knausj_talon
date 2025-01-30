@@ -184,6 +184,7 @@ change discard: user.vscode("git.revertSelectedRanges")
 
 git blame: user.vscode("gitlens.toggleFileBlameInDiffLeft")
 git blame toggle: user.vscode("gitlens.toggleLineBlame")
+# git head: user.vscode("git.openFile")
 git head: user.vscode("gitlens.openWorkingFile")
 git compare to master:
     user.vscode("gitlens.diffWithRevisionFrom")

@@ -1,6 +1,8 @@
 app: vscode
 not tag: user.codeium
 -
+pilot switch: user.vscode("workbench.panel.chat")
+
 pilot jest: user.vscode("editor.action.inlineSuggest.trigger")
 pilot next: user.vscode("editor.action.inlineSuggest.showNext")
 pilot (previous | last): user.vscode("editor.action.inlineSuggest.showPrevious")

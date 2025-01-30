@@ -3,7 +3,7 @@ nope: key(ctrl-z)
 sup: user.mouse_scroll_up()
 clown: user.mouse_scroll_down()
 
-next year: "31.12.2024"
+next year: "31.12.2025"
 
 # switch
 swat: key(alt-tab)
@@ -49,3 +49,6 @@ output device:
 
 biggy <user.cursorless_target>:
   user.cursorless_reformat(cursorless_target, 'title')
+
+debugger time:
+  "<% debugger %>"
