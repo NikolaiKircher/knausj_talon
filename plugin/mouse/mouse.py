@@ -123,6 +123,10 @@ class Actions:
         if setting_mouse_wake_hides_cursor.get() >= 1:
             show_cursor_helper(False)
 
+    def mouse_toggle_control_mouse(enabled: bool = None):
+        """Toggles control mouse. Pass in a bool to enable it, otherwise toggle the current state"""
+        actions.tracking.control_toggle(enabled)
+
     def mouse_toggle_zoom_mouse():
         """Toggles zoom mouse"""
         eye_zoom_mouse.toggle_zoom_mouse(not eye_zoom_mouse.zoom_mouse.enabled)
