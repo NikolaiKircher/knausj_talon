@@ -6,7 +6,7 @@ tag(): user.line_commands
 tag(): user.multiple_cursors
 tag(): user.splits
 tag(): user.tabs
-<<<<<<< HEAD
+tag(): user.command_search
 
 # custom
 result next:
@@ -229,10 +229,6 @@ term selected:
     user.vscode("workbench.action.terminal.runSelectedText")
 
 # knausj
-=======
-tag(): user.command_search
-
->>>>>>> upstream/main
 window reload: user.vscode("workbench.action.reloadWindow")
 window close: user.vscode("workbench.action.closeWindow")
 #multiple_cursor.py support end

@@ -13,6 +13,14 @@ next one: edit.find_next()
 
 # Navigation
 
+drain: edit.word_left()
+
+step: edit.word_right()
+
+drill: edit.left()
+
+push: edit.right()
+
 # The reason for these spoken forms is that "page up" and "page down" are globally defined as keys.
 scroll up: edit.page_up()
 scroll down: edit.page_down()
@@ -37,6 +45,10 @@ go bottom: edit.file_end()
 go page up: edit.page_up()
 go page down: edit.page_down()
 
+
+# selecting
+seagull: edit.select_line()
+
 # Indentation
 indent [more]: edit.indent_more()
 (indent less | out dent): edit.indent_less()
@@ -53,6 +65,9 @@ cut that: edit.cut()
     edit.paste()
     key(enter)
 paste match: edit.paste_match_style()
+pastry:
+    edit.paste()
+    sleep(0.5)
 
 # Duplication
 clone that: edit.selection_clone()
@@ -74,7 +89,7 @@ undo that: edit.undo()
 redo that: edit.redo()
 
 # Save
-file save: edit.save()
+disc | file save: edit.save()
 file save all: edit.save_all()
 
 [go] line mid: user.line_middle()
