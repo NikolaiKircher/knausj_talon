@@ -1,4 +1,5 @@
 from talon import Context, Module, actions, app
+import re
 
 is_mac = app.platform == "mac"
 
@@ -165,6 +166,16 @@ class WinActions:
 
 @mod.action_class
 class Actions:
+    def vscode_focus_files_to_include():
+        """Focus the search bar field 'files to include'"""
+        actions.user.vscode("workbench.action.focusActiveEditorGroup")
+        actions.sleep("50ms")
+        actions.user.vscode("workbench.view.search")
+        actions.sleep("50ms")
+        actions.key("ctrl-shift-f")
+        actions.user.vscode("search.focus.nextInputBox")
+        actions.sleep("50ms")
+
     def vscode_terminal(number: int):
         """Activate a terminal by number"""
         actions.user.vscode(f"workbench.action.terminal.focusAtIndex{number}")
@@ -173,6 +184,23 @@ class Actions:
         """Show command palette"""
         actions.key("ctrl-shift-p")
 
+    def vscode_take_word(cursorless_target: dict, repeats: int):
+        """Take word on cursorless target with number of repeats"""
+        actions.user.cursorless_command("setSelection", cursorless_target)
+        text = actions.edit.selected_text()
+
+        if re.match(r"[\wåäöÅÄÖ]", text):
+            actions.edit.right()
+        else:
+            repeats -= 1
+
+        # Select number of next instances
+        for _ in range(repeats):
+            actions.user.vscode("editor.action.addSelectionToNextFindMatch")
+
+        # Select all instances
+        if repeats < 0:
+            actions.user.vscode("editor.action.selectHighlights")
 
 @mac_ctx.action_class("edit")
 class MacEditActions:
@@ -210,7 +238,7 @@ class UserActions:
         actions.user.vscode("workbench.action.focusLeftGroup")
 
     def split_next():
-        actions.user.vscode_and_wait("workbench.action.focusRightGroup")
+        actions.user.vscode_and_wait("workbench.action.navigateEditorGroups")
 
     def split_window_down():
         actions.user.vscode("workbench.action.moveEditorToBelowGroup")
