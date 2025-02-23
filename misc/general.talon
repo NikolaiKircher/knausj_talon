@@ -45,7 +45,7 @@ key(ctrl-f8):
   speech.toggle()
 
 key(ctrl-f9):
-  user.mouse_toggle_control_mouse()
+  user.control_mouse_toggle()
 
 output device:
   key(super-ctrl-v)

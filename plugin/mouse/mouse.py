@@ -46,7 +46,8 @@ class Actions:
 
     def mouse_wake():
         """Enable control mouse, zoom mouse, and disables cursor"""
-        actions.tracking.control_zoom_toggle(True)
+        actions.tracking.control_toggle(True)
+        # actions.tracking.control_zoom_toggle(True)
 
         if settings.get("user.mouse_wake_hides_cursor"):
             actions.user.mouse_cursor_hide()
@@ -94,6 +95,10 @@ class Actions:
         """Move the mouse cursor to the center of the currently active window"""
         rect = ui.active_window().rect
         actions.mouse_move(rect.center.x, rect.center.y)
+
+    def control_mouse_toggle():
+        """Enable or disable control mouse"""
+        actions.tracking.control_toggle()
 
 
 @ctx.action_class("user")
