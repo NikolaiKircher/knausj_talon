@@ -41,6 +41,12 @@ pick up <number_small>: key("up:{number_small} enter")
 parrot(palatal_click):
     user.wake_or_repeat_phrase()
 
+key(ctrl-f8):
+  speech.toggle()
+
+key(ctrl-f9):
+  user.mouse_toggle_control_mouse()
+
 output device:
   key(super-ctrl-v)
 
