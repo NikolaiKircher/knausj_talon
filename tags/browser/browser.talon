@@ -4,6 +4,14 @@ tag(): user.address
 tag(): user.find
 tag(): user.navigation
 
+copy number:
+  browser.focus_address()
+  sleep(50ms)
+  key(right ctrl-shift-left ctrl-shift-left)
+  edit.copy()
+
+snip code:
+  insert('{{code}}')
 go page | page focus: browser.focus_page()
 
 go home: browser.go_home()

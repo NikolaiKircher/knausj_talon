@@ -1,4 +1,4 @@
-control mouse: tracking.control_toggle()
+coffee | control mouse: tracking.control_toggle()
 control off: user.mouse_sleep()
 zoom mouse: tracking.control_zoom_toggle()
 camera overlay: tracking.control_debug_toggle()
@@ -13,7 +13,7 @@ touch:
     # Touch automatically ends left drags so this is for right drags specifically
     user.mouse_drag_end()
 
-righty:
+king:
     # close zoom if open
     tracking.zoom_cancel()
     mouse_click(1)
@@ -26,6 +26,22 @@ mid click:
     mouse_click(2)
     # close the mouse grid
     user.grid_close()
+
+contouch:
+  key(ctrl:down)
+  mouse_click(0)
+  key(ctrl:up)
+
+shifter:
+  key(shift:down)
+  mouse_click(0)
+  key(shift:up)
+
+fish:
+  key(shift:down)
+  mouse_click(0)
+  key(shift:up)
+  edit.copy()
 
 #see keys.py for modifiers.
 #defaults
@@ -42,7 +58,7 @@ mid click:
     key("{modifiers}:up")
     # close the mouse grid
     user.grid_close()
-<user.modifiers> righty:
+<user.modifiers> king:
     # close zoom if open
     tracking.zoom_cancel()
     key("{modifiers}:down")
