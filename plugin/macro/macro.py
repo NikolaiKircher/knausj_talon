@@ -57,6 +57,13 @@ class Actions:
         """Closed the saved macros list."""
         macro_list_gui.hide()
 
+    def macro_insert_wait(number_small: int):
+        """Insert wait for given number of seconds"""
+        if not number_small:
+            actions.sleep("250ms")
+        else:
+            actions.sleep(f"{number_small}s")
+
     def macro_play(name: str):
         """Execute the commands in the last recorded macro."""
         actions.user.macro_stop()
