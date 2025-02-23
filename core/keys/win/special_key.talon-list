@@ -6,15 +6,15 @@ os: linux
 end: end
 home: home
 minus: minus
-enter: enter
+shock: enter
 page down: pagedown
 page up: pageup
-escape: escape
-space: space
-tab: tab
+scrape: escape
+blank: space
+tax: tab
 insert: insert
-wipe: backspace
+junk: backspace
 delete: backspace
-forward delete: delete
+trash: delete
 menu key: menu
 print screen: printscr
