@@ -4,9 +4,9 @@ settings():
     # 30pixels diameter
     user.mode_indicator_size = 30
     # Center horizontally. (0=left, 0.5=center, 1=right)
-    user.mode_indicator_x = 0.85
+    user.mode_indicator_x = 1
     # Align top. (0=top, 0.5=center, 1=bottom)
-    user.mode_indicator_y = 0.981
+    user.mode_indicator_y = 0.5
     # transparency
     user.mode_indicator_color_alpha = 1
     # Grey gradient
