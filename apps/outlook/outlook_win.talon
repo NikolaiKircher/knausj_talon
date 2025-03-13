@@ -33,15 +33,16 @@ copy login:
   edit.copy()
   sleep(100ms)
   key(alt-f4)
-  sleep(100ms)
+  sleep(200ms)
   key(delete)
-  sleep(100ms)
+  sleep(200ms)
   key(super-4)
   sleep(300ms)
   key(tab)
   sleep(100ms)
   edit.paste()
-  # key(enter)
+  sleep(100ms)
+  key(enter)
 
 # documentation
 # https://support.microsoft.com/en-us/office/keyboard-shortcuts-for-outlook-3cdeb221-7ae5-4c1d-8c1d-9e63216c1efd
