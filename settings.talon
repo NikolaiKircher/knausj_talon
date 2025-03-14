@@ -4,7 +4,7 @@ settings():
 
     # Uncomment to set the speech timeout. This is the amount of time after you stop
     # speaking until Talon starts processing the spoken audio. Default is 0.3s.
-    # speech.timeout = 0.3
+    speech.timeout = 0.4
 
     # Uncomment to enable dark mode for talon help menus
     # imgui.dark_mode = true
@@ -119,3 +119,5 @@ settings():
 # By default you need to say "numb one" to write "1". If you uncomment this,
 # you can say "one" to write "1".
 # tag(): user.unprefixed_numbers
+
+tag(): user.cursorless_use_community_snippets
