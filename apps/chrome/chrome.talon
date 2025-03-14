@@ -32,3 +32,7 @@ set next version:
     insert("next_version")
     sleep(0.2)
     key(enter enter)
+
+# requires extension
+tab close other: key("alt-shift-O")
+tab close right: key("alt-shift-R")
